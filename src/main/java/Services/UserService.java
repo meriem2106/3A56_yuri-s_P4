@@ -78,6 +78,80 @@ public class UserService implements IService{
 
         return list;
     }
+    @Override
+    public boolean test_num_telephonique(String numtel) {
+        int i;
+        String[] tab = {"0", "1", "4", "6", "8"};
+        for (i = 0; i < tab.length; i++) {
+            if (numtel.charAt(0) == tab[i].charAt(0)) {
+                return false;
+            }
+        }
 
+        return true;
+    }
+
+    @Override
+    public boolean test_Tel(String numtel) {
+        int i;
+
+        if (numtel.length() != 8) {
+            return false;
+        }
+
+        for (i = 0; i < numtel.length(); i++) {
+
+            if ((!(numtel.charAt(i) >= '0' && numtel.charAt(i) <= '9')) || (test_num_telephonique(numtel) == false)) {
+                return false;
+            }
+
+        }
+        return true;
+    }
+
+    @Override
+    public boolean test_Email(String mail) {
+        int test = 0;
+        int position = 0;
+        int test2 = 0;
+        String[] tab = {"/", ";", ",", ":", "'", "&", "=", ">", "-", "_", "+", " ","!"};
+
+        for (int i = 0; i < mail.length(); i++) {
+            if (mail.charAt(i) == "@".charAt(0)) {
+                test++;
+                position = i;
+            }
+
+        }
+        for (int k = 0; k < mail.length(); k++) {
+
+            for (String tab1 : tab) {
+                if (mail.charAt(k) == tab1.charAt(0)) {
+                    return false;
+                }
+            }
+        }
+        for (int i = 0; i < mail.length(); i++) {
+            if ((test == 1) && (mail.charAt(i) == ".".charAt(0))) {
+
+                if (((mail.length() > i + 2) && (i > position + 4))) {
+                    for (int j = position; j < mail.length(); j++) {
+                        if (mail.charAt(j) == ".".charAt(0)) {
+                            test2++;
+
+                        }
+                    }
+                    if (test2 > 1) {
+                        return false;
+                    }
+
+                    return true;
+                }
+
+            }
+
+        }
+        return false;
+    }
 
 }

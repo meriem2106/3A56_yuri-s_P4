@@ -12,6 +12,20 @@ public class Main {
         User user1 = new User("test","test",29451854,"test","test",Role.CLIENT);
         User user2 = new User("fregf","frzf",848495,"test@test.com","fez",Role.ADMIN);
 
+//Ajout
+        if (userService.test_Tel(String.valueOf(user.getNumtel())) == false && userService.test_Email(user.getEmail()) == false)
+        {
+            System.out.println("Verifiez votre Email et num de tel");
+        }
+        else if (userService.test_Tel(String.valueOf(user.getNumtel())) == true && userService.test_Email(user.getEmail()) == false) {
+            System.out.println("Verifiez votre Email");
+        }
+        else if (userService.test_Tel(String.valueOf(user.getNumtel())) == false && userService.test_Email(user.getEmail()) == true) {
+            System.out.println("Verifiez votre num de tel");
+        }
+        else {
+            userService.ajouterUser(user);
+        }
 
 
         //Modification

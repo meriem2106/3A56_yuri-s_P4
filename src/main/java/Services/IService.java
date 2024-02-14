@@ -5,8 +5,8 @@ import java.util.List;
 
 public interface IService {
     public void ajouterUser(User user);
-   // public void modifierUser(User user, int id);
-    // public void supprimerUser(int id);
+    public void modifierUser(User user, int id);
+     public void supprimerUser(int id);
     public List<User> afficherUser();
    // public boolean test_num_telephonique(String numtel);
  //   public boolean test_Tel(String numtel);

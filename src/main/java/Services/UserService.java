@@ -27,7 +27,29 @@ public class UserService implements IService{
             System.err.println(e.getMessage());
         }
     }
+    @Override
+    public void modifierUser(User user, int id) {
+        try {
+            String query = "UPDATE `user` SET `nom` = '" + user.getNom() + "', `prenom` = '" + user.getPrenom() + "', `numtel` = '" + user.getNumtel()  + "', `email` = '" + user.getEmail()  + "', `password` = '" + user.getPassword()  +   "' WHERE `user`.`id` = " + id;
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+            System.out.println("user updated !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 
+    @Override
+    public void supprimerUser(int id) {
+        try {
+            String req = "DELETE FROM `user` WHERE id = " + id;
+            Statement st = conn.createStatement();
+            st.executeUpdate(req);
+            System.out.println("user deleted !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 
     @Override
     public List<User> afficherUser() {

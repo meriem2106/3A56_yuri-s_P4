@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="403.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Affichage">
+   <children>
+      <ImageView fitHeight="442.0" fitWidth="704.0" layoutX="-8.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Assets/bckg.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="262.0" layoutY="83.0" prefHeight="35.0" prefWidth="159.0" text="Affichage BD" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView layoutX="69.0" layoutY="151.0" prefHeight="268.0" prefWidth="551.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="id" />
+          <TableColumn prefWidth="75.0" text="nom" />
+            <TableColumn prefWidth="75.0" text="prenom" />
+            <TableColumn prefWidth="75.0" text="Numtel" />
+            <TableColumn prefWidth="75.0" text="email" />
+            <TableColumn prefWidth="75.0" text="Password" />
+            <TableColumn prefWidth="75.0" text="Role" />
+        </columns>
+      </TableView>
+      <Button layoutX="471.0" layoutY="116.0" mnemonicParsing="false" text="Modifier" textFill="BLUE" />
+      <Button layoutX="546.0" layoutY="116.0" mnemonicParsing="false" text="Supprimer" textFill="RED" />
+   </children>
+</AnchorPane>

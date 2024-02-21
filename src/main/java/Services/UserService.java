@@ -11,8 +11,8 @@ public class UserService implements IService{
 
     Connection conn = DataSource.getInstance().getCnx();
     @Override
-    public void ajouterUser(User user) {
-        try {
+    public void ajouterUser(User user) throws SQLException {
+
             String query = "INSERT INTO user (nom, prenom, numtel,email,password,role) VALUES (?, ?, ?,?,?,?)";
             PreparedStatement preparedStatement = conn.prepareStatement(query);
             preparedStatement.setString(1, user.getNom());
@@ -23,9 +23,7 @@ public class UserService implements IService{
             preparedStatement.setString(6, user.getRole().toString());
             preparedStatement.executeUpdate();
             System.out.println("user ajouté");
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
+
     }
     @Override
     public void modifierUser(User user, int id) {

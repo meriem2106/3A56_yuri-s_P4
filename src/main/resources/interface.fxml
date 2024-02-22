@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserControler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserControler">
    <children>
       <ImageView fitHeight="400.0" fitWidth="684.0" layoutX="-18.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -28,5 +28,6 @@
       <Text fill="WHITE" layoutX="146.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" />
       <Button fx:id="bttn" layoutX="209.0" layoutY="350.0" mnemonicParsing="false" onAction="#SaveUser" prefHeight="26.0" prefWidth="84.0" text="S'inscrire" />
       <Button layoutX="316.0" layoutY="350.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="84.0" text="Annuler" />
+      <ImageView fx:id="image_user" fitHeight="150.0" fitWidth="200.0" layoutX="386.0" layoutY="66.0" onMouseClicked="#image_add" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -9,17 +9,22 @@ public class User {
     private String email;
     private String password;
     private Role role;
+    private String image;
 
     public User() {
     }
-    public User(String nom, String prenom, int numtel, String email, String password) {
+
+    public User(String nom, String prenom, int numtel, String email, String password, Role role, String image) {
         this.nom = nom;
         this.prenom = prenom;
         this.numtel = numtel;
         this.email = email;
         this.password = password;
+        this.role = role;
+        this.image = image;
     }
-    public User(int id, String nom, String prenom, int numtel, String email, String password, Role role) {
+
+    public User(int id, String nom, String prenom, int numtel, String email, String password, Role role, String image) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -27,15 +32,7 @@ public class User {
         this.email = email;
         this.password = password;
         this.role = role;
-    }
-
-    public User(String nom, String prenom, int numtel, String email, String password, Role role) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.numtel = numtel;
-        this.email = email;
-        this.password = password;
-        this.role = role;
+        this.image = image;
     }
 
     public int getId() {
@@ -92,6 +89,14 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @Override

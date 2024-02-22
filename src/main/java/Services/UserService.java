@@ -13,22 +13,23 @@ public class UserService implements IService{
     @Override
     public void ajouterUser(User user) throws SQLException {
 
-            String query = "INSERT INTO user (nom, prenom, numtel,email,password,role) VALUES (?, ?, ?,?,?,?)";
-            PreparedStatement preparedStatement = conn.prepareStatement(query);
-            preparedStatement.setString(1, user.getNom());
-            preparedStatement.setString(2, user.getPrenom());
-            preparedStatement.setInt(3, user.getNumtel());
-            preparedStatement.setString(4, user.getEmail());
-            preparedStatement.setString(5, user.getPassword());
-            preparedStatement.setString(6, user.getRole().toString());
-            preparedStatement.executeUpdate();
-            System.out.println("user ajouté");
+        String query = "INSERT INTO user (nom, prenom, numtel,email,password,role,image) VALUES (?, ?, ?,?,?,?,?)";
+        PreparedStatement preparedStatement = conn.prepareStatement(query);
+        preparedStatement.setString(1, user.getNom());
+        preparedStatement.setString(2, user.getPrenom());
+        preparedStatement.setInt(3, user.getNumtel());
+        preparedStatement.setString(4, user.getEmail());
+        preparedStatement.setString(5, user.getPassword());
+        preparedStatement.setString(6, user.getRole().toString());
+        preparedStatement.setString(7, user.getImage());
+        preparedStatement.executeUpdate();
+        System.out.println("user ajouté");
 
     }
     @Override
     public void modifierUser(User user, int id) {
         try {
-            String query = "UPDATE `user` SET `nom` = '" + user.getNom() + "', `prenom` = '" + user.getPrenom() + "', `numtel` = '" + user.getNumtel()  + "', `email` = '" + user.getEmail()  + "', `password` = '" + user.getPassword()  +   "' WHERE `user`.`id` = " + id;
+            String query = "UPDATE `user` SET `nom` = '" + user.getNom() + "', `prenom` = '" + user.getPrenom() + "', `numtel` = '" + user.getNumtel()  + "', `email` = '" + user.getEmail()  + "', `password` = '" + user.getPassword()  + "', `image` = '" + user.getImage()  +   "' WHERE `user`.`id` = " + id;
             Statement st = conn.createStatement();
             st.executeUpdate(query);
             System.out.println("user updated !");
@@ -66,7 +67,9 @@ public class UserService implements IService{
                 user.setEmail(RS.getString(5));
                 user.setPassword(RS.getString(6));
                 user.setRole(Role.valueOf(RS.getString(7)));
+                user.setImage(RS.getString(8));
 
+                System.out.println(user.getImage());
                 list.add(user);
                 System.out.println(user);
             }
@@ -150,6 +153,34 @@ public class UserService implements IService{
 
         }
         return false;
+    }
+
+    @Override
+    public List<User> rechercheUser(int id) {
+        List<User> list = new ArrayList<>();
+        try {
+            String req = "SELECT * FROM `user` WHERE id= " + id;
+            Statement st = conn.createStatement();
+            ResultSet RS = st.executeQuery(req);
+            while (RS.next()) {
+                User user = new User();
+                user.setId(RS.getInt("id"));
+                user.setNom(RS.getString("nom"));
+                user.setPrenom(RS.getString("prenom"));
+                user.setNumtel(RS.getInt("numtel"));
+                user.setEmail(RS.getString("email"));
+                user.setPassword(RS.getString("password"));
+                user.setRole(Role.valueOf(RS.getString("role")));
+                user.setImage(RS.getString("image"));
+
+                System.out.println(user);
+                list.add(user);
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex);
+        }
+
+        return list;
     }
 
 }

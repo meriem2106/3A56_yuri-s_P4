@@ -10,8 +10,8 @@ public class Main {
         UserService userService = new UserService();
 
       //  User user = new User("achref","abz",29451854,"test@test.com","test",Role.ADMIN);
-        User user1 = new User("test2","test",29451854,"test","test",Role.CLIENT);
-        User user2 = new User("fregf","frzf",848495,"test@test.com","fez",Role.ADMIN);
+        User user1 = new User("test2","test",29451854,"test","test",Role.CLIENT,"backg.jpg");
+      //  User user2 = new User("fregf","frzf",848495,"test@test.com","fez",Role.ADMIN);
 
 //Ajout
         if (userService.test_Tel(String.valueOf(user1.getNumtel())) == false && userService.test_Email(user1.getEmail()) == false)

@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
         stage.setTitle("TuniWorld");
         stage.setScene(scene);
         stage.show();
-        stage.show();
+    ::
     }   
     public static void main(String[] args) {
         launch();

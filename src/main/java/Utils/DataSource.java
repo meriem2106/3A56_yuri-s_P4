@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DataSource {
-    private String url = "jdbc:mysql://localhost:3306/tunichef";
+    private String url = "jdbc:mysql://localhost:3306/Utilisateur";
     private String user = "root";
     private String passwd = "";
 

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FrontOffice.ModifierMaison">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0">
+         <image>
+            <Image url="@../images/scene-tranquille-palmiers-par-ecoulement-eau-generee-par-ia-65dbe89206e3b.jpg" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="325.0" layoutY="62.0" opacity="0.89" prefHeight="501.0" prefWidth="705.0" spacing="20.0" style="-fx-background-color: #f0f0f0; -fx-padding: 20px;">
+      
+          <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Mise à jour de la maison d'hote" textFill="#12ac6c" />
+      
+          <VBox style="-fx-spacing: 10px;">
+      
+              <HBox alignment="CENTER" style="-fx-spacing: 10px;">
+                  <Label style="-fx-font-weight: bold;" text="Nom:" textFill="#12ac6c" />
+                  <TextField fx:id="id_nom" />
+              </HBox>
+      
+              <HBox alignment="CENTER" style="-fx-spacing: 10px;">
+                  <Label style="-fx-font-weight: bold;" text="Nombre Chambres:" textFill="#12ac6c" />
+                  <TextField fx:id="id_nb_chambres" />
+              </HBox>
+      
+              <HBox alignment="CENTER" style="-fx-spacing: 10px;">
+                  <Label style="-fx-font-weight: bold;" text="Prix:" textFill="#12ac6c" />
+                  <TextField fx:id="id_prix" />
+              </HBox>
+      
+              <HBox alignment="CENTER" style="-fx-spacing: 10px;">
+                  <Label style="-fx-font-weight: bold;" text="Email:" textFill="#12ac6c" />
+                  <TextField fx:id="id_email" />
+              </HBox>
+      
+              <HBox alignment="CENTER" style="-fx-spacing: 10px;">
+                  <Label style="-fx-font-weight: bold;" text="Capacite:" textFill="#12ac6c" />
+                  <TextField fx:id="id_capacite" />
+              </HBox>
+      
+              <HBox alignment="CENTER" style="-fx-spacing: 10px;">
+                  <Label style="-fx-font-weight: bold;" text="Localisation:" textFill="#12ac6c" />
+                  <TextField fx:id="id_localisation" />
+              </HBox>
+      
+              <HBox alignment="CENTER" style="-fx-spacing: 10px;">
+                  <Label style="-fx-font-weight: bold;" text="Ville:" textFill="#12ac6c" />
+                  <TextField fx:id="id_ville" />
+              </HBox>
+      
+              <HBox alignment="CENTER" style="-fx-spacing: 10px;">
+                  <Label style="-fx-font-weight: bold;" text="Disponibilité:" textFill="#12ac6c" />
+                  <TextField fx:id="id_disponibilite" />
+              </HBox>
+      
+              <HBox alignment="CENTER" style="-fx-spacing: 10px;">
+                  <Label style="-fx-font-weight: bold;" text="Description:" textFill="#12ac6c" />
+                  <TextField fx:id="id_description" />
+              </HBox>
+      
+              <HBox alignment="CENTER" style="-fx-spacing: 10px;">
+                  <Label style="-fx-font-weight: bold;" text="Image:" textFill="#12ac6c" />
+                  <TextField fx:id="id_image" />
+              </HBox>
+      
+          </VBox>
+      
+          <Button onAction="#modify_and_return" style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Enregistrer" textFill="#18c132" />
+      
+      </VBox>
+   </children>
+</AnchorPane>

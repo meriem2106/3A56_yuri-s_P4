@@ -153,6 +153,51 @@ public class ServiceHotel implements IService<Hotel> {
         return hotelTrouve;
     }
 
+    public Hotel voirDetails(int id) {
+        String req = "SELECT * FROM hotel WHERE id = ?";
+        Hotel hotelDetails = null;
+        PreparedStatement prepStat = null;
+        ResultSet result = null;
+
+        try {
+            prepStat = connection.prepareStatement(req);
+            prepStat.setInt(1, id);
+            result = prepStat.executeQuery();
+
+            if (result.next()) {
+                hotelDetails = new Hotel();
+                hotelDetails.setId(result.getInt("id"));
+                hotelDetails.setNom(result.getString("nom"));
+                hotelDetails.setNbEtoiles(result.getInt("nb_etoiles"));
+                hotelDetails.setPrix(result.getString("prix"));
+                hotelDetails.setEmail(result.getString("email"));
+                hotelDetails.setTelephone(result.getString("telephone"));
+                hotelDetails.setLocalisation(result.getString("localisation"));
+                hotelDetails.setVille(result.getString("ville"));
+                hotelDetails.setDisponibilite(result.getString("disponibilite"));
+                hotelDetails.setDescription(result.getString("description"));
+                hotelDetails.setImage(result.getString("image"));
+            }
+        } catch (SQLException ex) {
+            System.out.println("Erreur lors de la récupération des détails de l'hôtel : " + ex.getMessage());
+        } finally {
+            // Fermeture des ressources JDBC dans un bloc finally pour garantir la libération des ressources
+            try {
+                if (result != null) {
+                    result.close();
+                }
+                if (prepStat != null) {
+                    prepStat.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println("Erreur lors de la fermeture des ressources JDBC : " + ex.getMessage());
+            }
+        }
+
+        return hotelDetails;
+    }
+
+
 }
 
 

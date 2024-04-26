@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BackOffice.AfficherMaison">
+   <children>
+      <ImageView fitHeight="819.0" fitWidth="1353.0" layoutX="-36.0" layoutY="-57.0" opacity="0.7">
+         <image>
+            <Image url="@../images/3d987e6c0e0e5a3512fd6949a5221c7b.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7eb7ec" height="473.0" layoutX="179.0" layoutY="166.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20px; -fx-arc-width: 20px;" width="929.0" />
+      <Button fx:id="show" layoutX="364.0" layoutY="576.0" mnemonicParsing="false" onAction="#show" prefHeight="50.0" prefWidth="206.0" text="Show">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="delete" layoutX="651.0" layoutY="576.0" mnemonicParsing="false" onAction="#delete" prefHeight="50.0" prefWidth="206.0" text="Delete">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <ListView fx:id="listMaison" layoutX="207.0" layoutY="243.0" prefHeight="319.0" prefWidth="873.0" />
+      <Text layoutX="207.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste Maisons :">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

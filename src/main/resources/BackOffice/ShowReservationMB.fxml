@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BackOffice.ShowReservationMB">
+    <children>
+      <ImageView fitHeight="759.0" fitWidth="1298.0" opacity="0.7">
+         <image>
+            <Image url="@../images/ac918872567ba57d49ee45af44536f18.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="496.0" layoutY="116.0">
+         <children>
+            <Rectangle arcHeight="20.0" arcWidth="5.0" height="488.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20px; -fx-arc-width: 20px;" width="288.0">
+               <fill>
+                  <LinearGradient endX="0.6893939104947177" endY="0.3409090827811848" startX="0.3333333179806219" startY="0.8333332972093063">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.5660818815231323" green="0.7522027492523193" blue="0.9263157844543457" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+              <VBox alignment="CENTER_LEFT" layoutX="12.0" prefHeight="488.0" prefWidth="263.0" spacing="10">
+                  <children>
+                      <Label fx:id="maison" text="Maison d'hote:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                      <Label fx:id="user" text="Touriste:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                      <Label fx:id="nbAdultes" text="Nombre D'adultes :">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                      <Label fx:id="nbEnfants" text="Nombre D'enfants :">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                      <Label fx:id="arrangement" text="Arrangement :">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                      <Label fx:id="repartition" text="Repartition :">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                      <Label fx:id="dateDepart" text="Date Depart :">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                      <Label fx:id="dateArrivee" text="Date D'arrivee:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  </children>
+               <opaqueInsets>
+                  <Insets left="10.0" right="10.0" />
+               </opaqueInsets>
+              </VBox>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

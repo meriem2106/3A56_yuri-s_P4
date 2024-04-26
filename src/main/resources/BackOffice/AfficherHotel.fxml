@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BackOffice.AfficherHotel">
+   <children>
+      <ImageView fitHeight="1010.0" fitWidth="1407.0" layoutY="-156.0" opacity="0.7">
+         <image>
+            <Image url="@../images/48a06647ab1750de420ef23d32ddf4e9.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7eb7ec" height="451.0" layoutX="201.0" layoutY="198.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20px; -fx-arc-width: 20px;" width="871.0" />
+      <Button fx:id="show" layoutX="429.0" layoutY="578.0" mnemonicParsing="false" onAction="#showHotel" prefHeight="50.0" prefWidth="206.0" text="Show">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="delete" layoutX="737.0" layoutY="578.0" mnemonicParsing="false" onAction="#delete" prefHeight="50.0" prefWidth="206.0" text="Delete">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ListView fx:id="listHotel" layoutX="238.0" layoutY="272.0" prefHeight="292.0" prefWidth="799.0" />
+      <Text layoutX="238.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste Hotels :">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

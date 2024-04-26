@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FrontOffice.AjouterReservationH">
+   <children>
+      <ImageView fitHeight="735.0" fitWidth="1421.0">
+         <image>
+            <Image url="@../../../../../Bureau%20BABOUR/Sprint-Java-Equipe-4%20-%20Final%20Backup%20v2/src/main/resources/images/forum/AddForumBackground.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="520.0" layoutX="318.0" layoutY="108.0" opacity="0.64" stroke="BLACK" strokeType="INSIDE" width="653.0" />
+      <TextField fx:id="nbAdultes" layoutX="382.0" layoutY="157.0" prefHeight="43.0" prefWidth="546.0" promptText="Veuillez entrer le nombre d'adultes" />
+      <Text layoutX="585.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre d'adultes">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Text>
+      <TextField fx:id="nbEnfants" layoutX="381.0" layoutY="243.0" prefHeight="43.0" prefWidth="546.0" promptText="Veuillez entrer le nombre d'enfants" />
+      <Text layoutX="585.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre d'enfants">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Text>
+      <Button fx:id="reserver" layoutX="561.0" layoutY="536.0" mnemonicParsing="false" onAction="#ReserverH" prefHeight="43.0" prefWidth="166.0" text="Reserver" textFill="#049bc9">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Text layoutX="377.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date D'arrivee">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Text>
+      <Text layoutX="681.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date De Depart">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Text>
+      <Text layoutX="376.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrangement" wrappingWidth="95.26171875">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Text>
+      <Text layoutX="675.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Repartition" wrappingWidth="95.26171875">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Text>
+      <DatePicker fx:id="dateArrivee" layoutX="381.0" layoutY="355.0" prefHeight="43.0" prefWidth="242.0" promptText="Veuillez entrer la date d'arrivee" />
+      <DatePicker fx:id="dateDepart" layoutX="675.0" layoutY="355.0" prefHeight="43.0" prefWidth="242.0" promptText="Veuillez entrer la date de depart" />
+      <ComboBox fx:id="arrangement" layoutX="377.0" layoutY="450.0" prefHeight="43.0" prefWidth="241.0" promptText="Veuillez entrer l'arrangement" />
+      <ComboBox fx:id="repartition" layoutX="675.0" layoutY="450.0" prefHeight="43.0" prefWidth="242.0" promptText="Veuillez entrer la repartition" />
+   </children>
+</AnchorPane>

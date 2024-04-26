@@ -1,5 +1,6 @@
 package entities;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class ReservationM {
@@ -8,7 +9,7 @@ public class ReservationM {
 
     private String arrangement,repartition;
 
-    private Date dateArrivee, dateDepart;
+    private LocalDate dateArrivee, dateDepart;
 
     private Maison maison;
 
@@ -17,7 +18,7 @@ public class ReservationM {
     public ReservationM() {
     }
 
-    public ReservationM(int id, int nbAdultes, int nbEnfants, String arrangement, String repartition, Date dateArrivee, Date dateDepart, Maison maison, Utilisateur utilisateur) {
+    public ReservationM(int id, int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart, Maison maison, Utilisateur utilisateur) {
         this.id = id;
         this.nbAdultes = nbAdultes;
         this.nbEnfants = nbEnfants;
@@ -29,7 +30,7 @@ public class ReservationM {
         this.utilisateur = utilisateur;
     }
 
-    public ReservationM(int nbAdultes, int nbEnfants, String arrangement, String repartition, Date dateArrivee, Date dateDepart, Maison maison, Utilisateur utilisateur) {
+    public ReservationM(int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart, Maison maison, Utilisateur utilisateur) {
         this.nbAdultes = nbAdultes;
         this.nbEnfants = nbEnfants;
         this.arrangement = arrangement;
@@ -38,6 +39,16 @@ public class ReservationM {
         this.dateDepart = dateDepart;
         this.maison = maison;
         this.utilisateur = utilisateur;
+    }
+
+    public ReservationM(int id, int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart) {
+        this.id = id;
+        this.nbAdultes = nbAdultes;
+        this.nbEnfants = nbEnfants;
+        this.arrangement = arrangement;
+        this.repartition = repartition;
+        this.dateArrivee = dateArrivee;
+        this.dateDepart = dateDepart;
     }
 
     public int getId() {
@@ -80,19 +91,19 @@ public class ReservationM {
         this.repartition = repartition;
     }
 
-    public Date getDateArrivee() {
+    public LocalDate getDateArrivee() {
         return dateArrivee;
     }
 
-    public void setDateArrivee(Date dateArrivee) {
+    public void setDateArrivee(LocalDate dateArrivee) {
         this.dateArrivee = dateArrivee;
     }
 
-    public Date getDateDepart() {
+    public LocalDate getDateDepart() {
         return dateDepart;
     }
 
-    public void setDateDepart(Date dateDepart) {
+    public void setDateDepart(LocalDate dateDepart) {
         this.dateDepart = dateDepart;
     }
 

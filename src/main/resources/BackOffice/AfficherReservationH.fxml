@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BackOffice.AfficherReservationH">
+   <children>
+      <ImageView fitHeight="832.0" fitWidth="1295.0" layoutY="-63.0" opacity="0.7">
+         <image>
+            <Image url="@../images/8b2d4b0a6e9ee010a7546bc07d0ea7f2.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7eb7ec" height="473.0" layoutX="199.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20px; -fx-arc-width: 20px;" width="929.0" />
+      <ListView fx:id="listReservationH" layoutX="226.0" layoutY="267.0" prefHeight="310.0" prefWidth="874.0" />
+      <Button fx:id="show" layoutX="457.0" layoutY="588.0" mnemonicParsing="false" onAction="#show" prefHeight="62.0" prefWidth="192.0" text="Show">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Button>
+      <Button fx:id="delete" layoutX="685.0" layoutY="588.0" mnemonicParsing="false" onAction="#delete" prefHeight="62.0" prefWidth="192.0" text="Delete">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Button>
+      <Text layoutX="223.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste Reservations Hotels :" wrappingWidth="467.68817138671875">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

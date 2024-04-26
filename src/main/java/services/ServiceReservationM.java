@@ -31,8 +31,8 @@ public class ServiceReservationM implements IService<ReservationM>{
             preparedStatement.setInt(2,reservationM.getNbEnfants());
             preparedStatement.setString(3,reservationM.getRepartition());
             preparedStatement.setString(4,reservationM.getArrangement());
-            preparedStatement.setDate(5, new java.sql.Date(reservationM.getDateDepart().getTime()));
-            preparedStatement.setDate(6, new java.sql.Date(reservationM.getDateArrivee().getTime()));
+            preparedStatement.setDate(5, java.sql.Date.valueOf(reservationM.getDateDepart()));
+            preparedStatement.setDate(6, java.sql.Date.valueOf(reservationM.getDateArrivee()));
             preparedStatement.setInt(7, reservationM.getMaison().getId());
             preparedStatement.setInt(8, reservationM.getUtilisateur().getId());
 
@@ -54,8 +54,8 @@ public class ServiceReservationM implements IService<ReservationM>{
         preparedStatement.setInt(2,reservationM.getNbEnfants());
         preparedStatement.setString(3,reservationM.getRepartition());
         preparedStatement.setString(4,reservationM.getArrangement());
-        preparedStatement.setDate(5, new java.sql.Date(reservationM.getDateDepart().getTime()));
-        preparedStatement.setDate(6, new java.sql.Date(reservationM.getDateArrivee().getTime()));
+        preparedStatement.setDate(5, java.sql.Date.valueOf(reservationM.getDateDepart()));
+        preparedStatement.setDate(6, java.sql.Date.valueOf(reservationM.getDateArrivee()));
         preparedStatement.setInt(7,reservationM.getId());
         preparedStatement.executeUpdate();
 
@@ -96,8 +96,8 @@ public class ServiceReservationM implements IService<ReservationM>{
             reservationM.setNbEnfants(rs.getInt("nb_enfants"));
             reservationM.setArrangement(rs.getString("arrangement"));
             reservationM.setRepartition(rs.getString("repartition"));
-            reservationM.setDateDepart(rs.getDate("datedepart"));
-            reservationM.setDateArrivee(rs.getDate("datearrivee"));
+            reservationM.setDateDepart(rs.getDate("datedepart").toLocalDate());
+            reservationM.setDateArrivee(rs.getDate("datearrivee").toLocalDate());
             reservationM.setId(rs.getInt("id"));
 
             // Ajouter le nom de l'hôtel
@@ -158,8 +158,8 @@ public class ServiceReservationM implements IService<ReservationM>{
                 reservationMTrouve.setNbEnfants(result.getInt("nb_enfants"));
                 reservationMTrouve.setArrangement(result.getString("arrangement"));
                 reservationMTrouve.setRepartition(result.getString("repartition"));
-                reservationMTrouve.setDateDepart(result.getDate("datedepart"));
-                reservationMTrouve.setDateArrivee(result.getDate("datearrivee"));
+                reservationMTrouve.setDateDepart(result.getDate("datedepart").toLocalDate());
+                reservationMTrouve.setDateArrivee(result.getDate("datearrivee").toLocalDate());
 
             }
         } catch (SQLException ex) {

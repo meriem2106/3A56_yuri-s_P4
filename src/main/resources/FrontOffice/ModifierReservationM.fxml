@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FrontOffice.ModifierReservationM">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0">
+         <image>
+            <Image url="@../images/03a16752740f155af5c80d21e78dbad8.jpg" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="298.0" layoutY="183.0" opacity="0.77" prefHeight="465.0" prefWidth="566.0" spacing="20.0" style="-fx-background-color: #f0f0f0; -fx-padding: 20px;">
+          <children>
+              <Label prefHeight="30.0" prefWidth="436.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Mise à jour de la reservation maison d'hote" textFill="#231fa6" />
+              <VBox alignment="CENTER" prefHeight="240.0" prefWidth="526.0" spacing="20.0" style="-fx-spacing: 10px;">
+                  <children>
+                      <HBox spacing="10.0" style="-fx-spacing: 10px;">
+                          <children>
+                              <Label style="-fx-font-weight: bold;" text="Nombre d'adultes:" textFill="#231fa6" />
+                              <TextField fx:id="id_nb_adultes" />
+                          </children>
+                      </HBox>
+                      <HBox style="-fx-spacing: 10px;">
+                          <children>
+                              <Label style="-fx-font-weight: bold;" text="Nombre d'enfants:" textFill="#231fa6" />
+                              <TextField fx:id="id_nb_enfants" />
+                          </children>
+                      </HBox>
+                      <HBox style="-fx-spacing: 10px;">
+                          <children>
+                              <Label prefHeight="18.0" prefWidth="104.0" style="-fx-font-weight: bold;" text="Arrangement:" textFill="#231fa6" />
+                              <TextField fx:id="id_arrangement" />
+                          </children>
+                      </HBox>
+                      <HBox style="-fx-spacing: 10px;">
+                          <children>
+                              <Label prefHeight="18.0" prefWidth="102.0" style="-fx-font-weight: bold;" text="Repartition:" textFill="#231fa6" />
+                              <TextField fx:id="id_repartition" />
+                          </children>
+                      </HBox>
+                      <HBox style="-fx-spacing: 10px;">
+                          <children>
+                              <Label prefHeight="18.0" prefWidth="101.0" style="-fx-font-weight: bold;" text="Date D'arrivee:" textFill="#231fa6" />
+                              <TextField fx:id="id_dateArrivee" />
+                          </children>
+                      </HBox>
+                      <HBox style="-fx-spacing: 10px;">
+                          <children>
+                              <Label prefHeight="18.0" prefWidth="102.0" style="-fx-font-weight: bold;" text="Date De Depart:" textFill="#231fa6" />
+                              <TextField fx:id="id_dateDepart" prefHeight="38.0" prefWidth="150.0" />
+                          </children>
+                      </HBox>
+                      <HBox style="-fx-spacing: 10px;" />
+                      <HBox style="-fx-spacing: 10px;" />
+                      <HBox style="-fx-spacing: 10px;" />
+                      <HBox style="-fx-spacing: 10px;" />
+                  </children>
+              </VBox>
+              <Button onAction="#modify_and_return" prefHeight="37.0" prefWidth="486.0" style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Enregistrer" textFill="#231fa6" />
+          </children>
+      </VBox>
+   </children>
+</AnchorPane>

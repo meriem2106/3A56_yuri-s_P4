@@ -1,7 +1,6 @@
 package entities;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class ReservationH {
 
@@ -16,6 +15,15 @@ public class ReservationH {
     private Utilisateur utilisateur;
 
     public ReservationH() {
+    }
+
+    public ReservationH(int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart) {
+        this.dateDepart = dateDepart;
+        this.dateArrivee = dateArrivee;
+        this.repartition = repartition;
+        this.arrangement = arrangement;
+        this.nbEnfants = nbEnfants;
+        this.nbAdultes = nbAdultes;
     }
 
     public ReservationH(int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart, Hotel hotel, Utilisateur utilisateur) {
@@ -41,7 +49,15 @@ public class ReservationH {
         this.utilisateur = utilisateur;
     }
 
-
+    public ReservationH(int id, int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart) {
+        this.id = id;
+        this.nbAdultes = nbAdultes;
+        this.nbEnfants = nbEnfants;
+        this.arrangement = arrangement;
+        this.repartition = repartition;
+        this.dateArrivee = dateArrivee;
+        this.dateDepart = dateDepart;
+    }
 
     public int getId() {
         return id;

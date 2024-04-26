@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FrontOffice.ShowMaison">
+    <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0">
+         <image>
+            <Image url="@../images/361417769-816933269825207-4400563746030610659-n-65e4c66aa0ad7.jpg" />
+         </image>
+      </ImageView>
+        <VBox alignment="CENTER_LEFT" layoutX="495.0" layoutY="126.0" opacity="0.66" prefHeight="498.0" prefWidth="306.0" spacing="10" style="-fx-background-color: #FFFFFF;">
+            <ImageView fx:id="image" fitHeight="200.0" fitWidth="200.0" />
+            <Label fx:id="nom" text="Nom :" textFill="#f40000">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font></Label>
+            <Label fx:id="ville" text="Ville :" textFill="#f40000">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font></Label>
+            <Label fx:id="capacite" text="Capacite :" textFill="#f40000">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font></Label>
+            <Label fx:id="mail" text="Email :" textFill="#f40000">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font></Label>
+            <Label fx:id="nbChambres" text="Nombres de Chambres :" textFill="#f40000">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font></Label>
+            <Label fx:id="loc" text="Localisation :" textFill="#f40000">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font></Label>
+            <Label fx:id="dispo" text="Disponibilité :" textFill="#f40000">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font></Label>
+            <Label fx:id="prix" text="Prix :" textFill="#f40000">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font></Label>
+            <Label fx:id="des" text="Description :" textFill="#f40000">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font></Label>
+            <HBox alignment="CENTER" spacing="10">
+                <Button fx:id="modifier" mnemonicParsing="false" onAction="#modifier" prefHeight="26.0" prefWidth="152.0" text="Modifier" textFill="#f40000">
+                    <HBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                    </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+                </Button>
+            </HBox>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+        </VBox>
+    </children>
+</AnchorPane>

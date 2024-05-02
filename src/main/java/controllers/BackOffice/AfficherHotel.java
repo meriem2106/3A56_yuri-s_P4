@@ -1,21 +1,28 @@
 package controllers.BackOffice;
 
-
 import entities.Hotel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import services.ServiceHotel;
+import javafx.geometry.Insets;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,21 +32,107 @@ import java.util.ResourceBundle;
 public class AfficherHotel implements Initializable {
 
     @FXML
+    private Circle circle;
+
+    @FXML
+    private HBox collectBtn;
+
+    @FXML
+    private HBox collectBtn1;
+
+    @FXML
+    private HBox collectBtn2;
+
+    @FXML
+    private HBox collectBtn3;
+
+    @FXML
+    private HBox collectBtn4;
+
+    @FXML
+    private HBox collectBtn5;
+
+    @FXML
+    private Label collectText;
+
+    @FXML
+    private Label collectText1;
+
+    @FXML
+    private Label collectText2;
+
+    @FXML
+    private Label collectText3;
+
+    @FXML
+    private Label collectText4;
+
+    @FXML
+    private Label collectText5;
+
+    @FXML
+    private HBox commandsBtn1;
+
+    @FXML
+    private Pane content_area;
+
+    @FXML
+    private HBox dashboardBtn;
+
+    @FXML
+    private ImageView dashboardIcon;
+
+    @FXML
+    private Label dashboardText;
+
+    @FXML
     private Button delete;
 
     @FXML
-    private Button show;
+    private HBox fundrisingBtn;
 
-    ServiceHotel hs = new ServiceHotel();
+    @FXML
+    private Label fundrisingText;
 
     @FXML
     private ListView<Hotel> listHotel;
 
     @FXML
+    private HBox navBarLogout;
+
+    @FXML
+    private Text navFullname;
+
+    @FXML
+    private HBox productsBtn;
+
+    @FXML
+    private Label productsText;
+
+    @FXML
+    private Button show;
+
+    @FXML
+    private HBox sideBarLogout;
+
+    @FXML
+    private HBox usersBtn;
+
+    @FXML
+    private Label usersText;
+
+
+
+
+    ServiceHotel hs = new ServiceHotel();
+
+
+
+    @FXML
     void delete(ActionEvent event) {
         Hotel selectedHotel = listHotel.getSelectionModel().getSelectedItem();
         if (selectedHotel != null) {
-           try {
+            try {
                 hs.supprimer(selectedHotel.getId());
                 refreshTable();
             } catch (SQLException ex) {
@@ -52,6 +145,41 @@ public class AfficherHotel implements Initializable {
         }
     }
 
+    @FXML
+    public void showHotel(ActionEvent event) {
+
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/BackOffice/ShowHotelB.fxml"));
+            Parent root = loader.load();
+
+
+            ShowHotelB controller = loader.getController();
+
+
+            // Assuming you have a selected hotel from your list view
+            Hotel selectedHotel = listHotel.getSelectionModel().getSelectedItem();
+
+// Pass the selected hotel to setData method
+            controller.setData(selectedHotel);
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @Override
@@ -121,39 +249,18 @@ public class AfficherHotel implements Initializable {
         listHotel.setItems(HList);
     }
 
-    @FXML
-    public void showHotel(ActionEvent event) {
-
-        try {
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/BackOffice/ShowHotelB.fxml"));
-            Parent root = loader.load();
-
-
-            ShowHotelB controller = loader.getController();
-
-
-            // Assuming you have a selected hotel from your list view
-            Hotel selectedHotel = listHotel.getSelectionModel().getSelectedItem();
-
-// Pass the selected hotel to setData method
-            controller.setData(selectedHotel);
-            // Check if the loading was successful
-            if (root != null) {
-                // Create a new scene with the loaded view
-                Scene scene = new Scene(root);
-
-                // Get the main stage from the event
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-                // Set the new scene on the stage
-                stage.setScene(scene);
-                stage.show();
-            } else {
-                System.err.println("Error: Loading ShowHotelB.fxml failed.");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

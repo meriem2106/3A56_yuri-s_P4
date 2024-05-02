@@ -14,9 +14,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import services.ServiceReservationH;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,13 +33,94 @@ public class AfficherReservationH implements Initializable {
 
 
     @FXML
+    private Circle circle;
+
+    @FXML
+    private HBox collectBtn;
+
+    @FXML
+    private HBox collectBtn1;
+
+    @FXML
+    private HBox collectBtn2;
+
+    @FXML
+    private HBox collectBtn3;
+
+    @FXML
+    private HBox collectBtn4;
+
+    @FXML
+    private HBox collectBtn5;
+
+    @FXML
+    private Label collectText;
+
+    @FXML
+    private Label collectText1;
+
+    @FXML
+    private Label collectText2;
+
+    @FXML
+    private Label collectText3;
+
+    @FXML
+    private Label collectText4;
+
+    @FXML
+    private Label collectText5;
+
+    @FXML
+    private HBox commandsBtn1;
+
+    @FXML
+    private Pane content_area;
+
+    @FXML
+    private HBox dashboardBtn;
+
+    @FXML
+    private ImageView dashboardIcon;
+
+    @FXML
+    private Label dashboardText;
+
+    @FXML
     private Button delete;
+
+    @FXML
+    private HBox fundrisingBtn;
+
+    @FXML
+    private Label fundrisingText;
 
     @FXML
     private ListView<ReservationH> listReservationH;
 
     @FXML
+    private HBox navBarLogout;
+
+    @FXML
+    private Text navFullname;
+
+    @FXML
+    private HBox productsBtn;
+
+    @FXML
+    private Label productsText;
+
+    @FXML
     private Button show;
+
+    @FXML
+    private HBox sideBarLogout;
+
+    @FXML
+    private HBox usersBtn;
+
+    @FXML
+    private Label usersText;
 
     ServiceReservationH srh = new ServiceReservationH();
 

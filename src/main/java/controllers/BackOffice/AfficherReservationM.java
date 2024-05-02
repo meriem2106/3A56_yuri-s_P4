@@ -12,29 +12,124 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.scene.text.Text;
 import services.ServiceReservationM;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 
+
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class AfficherReservationM implements Initializable  {
 
     @FXML
+    private Circle circle;
+
+    @FXML
+    private HBox collectBtn;
+
+    @FXML
+    private HBox collectBtn1;
+
+    @FXML
+    private HBox collectBtn2;
+
+    @FXML
+    private HBox collectBtn3;
+
+    @FXML
+    private HBox collectBtn4;
+
+    @FXML
+    private HBox collectBtn5;
+
+    @FXML
+    private Label collectText;
+
+    @FXML
+    private Label collectText1;
+
+    @FXML
+    private Label collectText2;
+
+    @FXML
+    private Label collectText3;
+
+    @FXML
+    private Label collectText4;
+
+    @FXML
+    private Label collectText5;
+
+    @FXML
+    private HBox commandsBtn1;
+
+    @FXML
+    private Pane content_area;
+
+    @FXML
+    private HBox dashboardBtn;
+
+    @FXML
+    private ImageView dashboardIcon;
+
+    @FXML
+    private Label dashboardText;
+
+    @FXML
     private Button delete;
+
+    @FXML
+    private HBox fundrisingBtn;
+
+    @FXML
+    private Label fundrisingText;
 
     @FXML
     private ListView<ReservationM> listReservationM;
 
     @FXML
+    private HBox navBarLogout;
+
+    @FXML
+    private Text navFullname;
+
+    @FXML
+    private HBox productsBtn;
+
+    @FXML
+    private Label productsText;
+
+    @FXML
     private Button show;
+
+    @FXML
+    private HBox sideBarLogout;
+
+    @FXML
+    private HBox usersBtn;
+
+    @FXML
+    private Label usersText;
 
     ServiceReservationM srm = new ServiceReservationM();
 
@@ -162,6 +257,82 @@ public class AfficherReservationM implements Initializable  {
         // Définissez les éléments de la ListView avec la liste observable
         listReservationM.setItems(RMList);
     }
+
+    @FXML
+    void exportToExcel(ActionEvent event) {
+        try {
+            List<ReservationM> reservations = srm.afficher();
+
+            Workbook workbook = new XSSFWorkbook();
+            Sheet sheet = workbook.createSheet("Reservations");
+
+            // Créer la première ligne avec les titres de colonnes
+            Row headerRow = sheet.createRow(0);
+            headerRow.createCell(0).setCellValue("NbAdultes");
+            headerRow.createCell(1).setCellValue("DateArrivee");
+            headerRow.createCell(2).setCellValue("DateDepart");
+            headerRow.createCell(3).setCellValue("Repartition");
+            headerRow.createCell(4).setCellValue("Arrangement");
+            headerRow.createCell(5).setCellValue("NbEnfants");
+            headerRow.createCell(6).setCellValue("NOM Maison");
+            headerRow.createCell(7).setCellValue("NOM Utilisateur");
+            headerRow.createCell(8).setCellValue("Prenom Utilisateur");
+
+            // Remplir les données des participants dans le fichier Excel
+            int rowNum = 1;
+
+
+            for (ReservationM reservation : reservations) {
+                Row row = sheet.createRow(rowNum++);
+                LocalDate localDate = reservation.getDateDepart();
+                Date dateDepart = java.sql.Date.valueOf(localDate);
+
+                LocalDate localDate1 = reservation.getDateArrivee();
+                Date dateArrivee = java.sql.Date.valueOf(localDate);
+
+// Formater la date
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                String dateDepartFormatted = dateFormat.format(dateDepart);
+                String dateFinFormatted = dateFormat.format(dateArrivee);
+
+                row.createCell(0).setCellValue(reservation.getNbAdultes());
+                row.createCell(1).setCellValue(dateDepartFormatted);
+                row.createCell(2).setCellValue(dateFinFormatted);
+                row.createCell(3).setCellValue(reservation.getRepartition());
+                row.createCell(4).setCellValue(reservation.getArrangement());
+                row.createCell(5).setCellValue(reservation.getNbEnfants());
+                row.createCell(6).setCellValue(reservation.getMaison().getNom());
+                row.createCell(7).setCellValue(reservation.getUtilisateur().getNom());
+                row.createCell(8).setCellValue(reservation.getUtilisateur().getPrenom());
+            }
+
+            // Ouvrir une boîte de dialogue de sélection de fichier pour choisir l'emplacement de téléchargement
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Save Excel File");
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Excel Files", "*.xlsx"));
+            File selectedFile = fileChooser.showSaveDialog(new Stage());
+
+            // Vérifier si un fichier a été sélectionné
+            if (selectedFile != null) {
+                // Enregistrer le fichier Excel dans l'emplacement sélectionné
+                try (FileOutputStream outputStream = new FileOutputStream(selectedFile)) {
+                    workbook.write(outputStream);
+                }
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success");
+                alert.setHeaderText("Download Successful");
+                alert.setContentText("The Excel file has been downloaded successfully.");
+                alert.showAndWait();
+
+                System.out.println("Excel file created successfully in the selected location!");
+            } else {
+                System.out.println("No download location selected.");
+            }
+        } catch (IOException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }

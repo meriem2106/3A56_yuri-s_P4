@@ -64,5 +64,6 @@
             </HBox>
          </children>
       </VBox>
+      <ImageView fx:id="Qr_id" fitHeight="150.0" fitWidth="200.0" layoutX="953.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -7,30 +7,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox prefHeight="229.0" prefWidth="203.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FrontOffice.MaisonCard">
    <children>
-      <AnchorPane prefHeight="227.0" prefWidth="239.0">
+      <AnchorPane prefHeight="227.0" prefWidth="239.0" stylesheets="@../../../assets/style/Style1.css">
          <children>
             <AnchorPane layoutX="15.0" prefHeight="229.0" prefWidth="221.0">
                <children>
-                  <VBox layoutX="8.0" prefHeight="229.0" prefWidth="224.0">
+                  <VBox alignment="CENTER" layoutX="8.0" prefHeight="229.0" prefWidth="224.0">
                      <children>
                         <ImageView fx:id="image" fitHeight="117.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label fx:id="ville" prefHeight="17.0" prefWidth="203.0" text="Ville :">
+                        <Label fx:id="nom" prefHeight="25.0" prefWidth="144.0" styleClass="product-title" text="Nom :" />
+                        <Label fx:id="ville" prefHeight="25.0" prefWidth="163.0" styleClass="product-title" text="Ville :">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="nom" prefHeight="17.0" prefWidth="202.0" text="Nom :" />
-                        <HBox prefHeight="100.0" prefWidth="200.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="192.0">
                            <children>
-                              <Button fx:id="show" mnemonicParsing="false" onAction="#show" text="Details">
+                              <Button fx:id="show" mnemonicParsing="false" onAction="#show" prefHeight="35.0" prefWidth="75.0" styleClass="productBtn" text="Plus">
                                  <HBox.margin>
                                     <Insets left="30.0" top="10.0" />
                                  </HBox.margin>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
                               </Button>
-                              <Button fx:id="reserver" mnemonicParsing="false" onAction="#reserver" text="Reserver">
+                              <Button fx:id="reserver" mnemonicParsing="false" onAction="#reserver" prefHeight="35.0" prefWidth="87.0" styleClass="productBtn" text="Res">
                                  <HBox.margin>
                                     <Insets left="30.0" top="10.0" />
                                  </HBox.margin>

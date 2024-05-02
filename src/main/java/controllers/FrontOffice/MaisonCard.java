@@ -46,9 +46,9 @@ public class MaisonCard extends Node {
 
         if (path!= null) {
             // Check if the path is not an absolute path (doesn't start with C:\)
-            if (!path.startsWith("Users\\THINKPAD\\IdeaProjects\\pidev\\src\\main\\resources\\images")) {
+            if (!path.startsWith("Users\\THINKPAD\\Desktop\\MODIFIED_PROJECT\\pidev\\src\\main\\resources\\images")) {
                 // Assuming you have a base directory for your images, replace "YOUR_BASE_DIRECTORY" with your actual base directory
-                String baseDirectory = "C:\\Users\\THINKPAD\\IdeaProjects\\pidev\\src\\main\\resources\\images";
+                String baseDirectory = "C:\\Users\\THINKPAD\\Desktop\\MODIFIED_PROJECT\\pidev\\src\\main\\resources\\images";
                 path = baseDirectory + "\\" + path;
                 System.out.println(path);
             }

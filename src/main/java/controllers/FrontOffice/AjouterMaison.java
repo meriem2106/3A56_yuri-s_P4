@@ -133,7 +133,7 @@ public class AjouterMaison implements Initializable {
     private void saveImageToFolder(File file) {
         try {
             // Define the directory path where you want to save the image
-            String directoryPath = "src/main/java/images";
+            String directoryPath = "src/main/resources/images";
 
             // Create the directory if it doesn't exist
             Path directory = Paths.get(directoryPath);

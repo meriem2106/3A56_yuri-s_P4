@@ -1,5 +1,8 @@
 package controllers.FrontOffice;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -16,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
@@ -28,6 +32,26 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+
+
+import javafx.embed.swing.SwingFXUtils;
+import net.glxn.qrgen.javase.QRCode;
+import javafx.scene.image.WritableImage;
+
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import java.nio.file.Paths;
+
 
 public class ShowReservationH {
 
@@ -75,6 +99,7 @@ public class ShowReservationH {
         arrangement.setText("Arrangement: " + reservationH.getArrangement());
         dateArrivee.setText("Date d'arrivee: " + reservationH.getDateArrivee());
         dateDepart.setText("Date de depart: " + reservationH.getDateDepart());
+        GenerateQR();
 
     }
 
@@ -191,6 +216,37 @@ public class ShowReservationH {
                 alert.showAndWait();
             }
         }
+    }
+
+    //QR
+    @FXML
+    private ImageView Qr_id;
+
+    public void GenerateQR()
+    {
+        try {
+            String data=reservationH.toString();
+            String path="QrGen.jpg";
+            BitMatrix matrix = null;
+            matrix = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE,150,150);
+            MatrixToImageWriter.writeToPath(matrix,"jpg", Paths.get(path));
+
+            // Convert BitMatrix to BufferedImage
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            MatrixToImageWriter.writeToStream(matrix, "JPG", outputStream);
+            ByteArrayInputStream inputStream = new ByteArrayInputStream(outputStream.toByteArray());
+            javafx.scene.image.Image image = new Image(inputStream);
+            Qr_id.setImage(image);
+        } catch (WriterException | IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+    public void SetQr()
+    {
+        Image img = new Image("QrGen.jpg");
+        Qr_id.setImage(img);
     }
 
 }

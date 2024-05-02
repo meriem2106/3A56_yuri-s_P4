@@ -128,17 +128,21 @@ public class AjouterHotel implements Initializable {
 
         File file = fileChooser.showOpenDialog(null);
         if (file != null) {
-            // Set the image path in the TextField
-            imageHotel.setText(file.getAbsolutePath());
+            // Extraire uniquement le nom de fichier sans le chemin complet
+            String fileName = file.getName();
+
+            // Set the image file name in the TextField
+            imageHotel.setText(fileName);
 
             saveImageToFolder(file);
         }
     }
 
+
     private void saveImageToFolder(File file) {
         try {
             // Define the directory path where you want to save the image
-            String directoryPath = "src/main/java/images";
+            String directoryPath = "src/main/resources/images";
 
             // Create the directory if it doesn't exist
             Path directory = Paths.get(directoryPath);

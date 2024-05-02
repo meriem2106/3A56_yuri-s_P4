@@ -290,7 +290,7 @@ public class AfficherReservationM implements Initializable  {
                 LocalDate localDate1 = reservation.getDateArrivee();
                 Date dateArrivee = java.sql.Date.valueOf(localDate);
 
-// Formater la date
+
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 String dateDepartFormatted = dateFormat.format(dateDepart);
                 String dateFinFormatted = dateFormat.format(dateArrivee);

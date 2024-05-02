@@ -12,61 +12,62 @@
 
 <AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FrontOffice.ShowReservationM">
     <children>
-      <ImageView fitHeight="720.0" fitWidth="1280.0" opacity="0.88">
-         <image>
-            <Image url="@../images/68851d4ac9c09584489b6e32c00b45bd.jpg" />
-         </image>
-      </ImageView>
+        <ImageView fitHeight="720.0" fitWidth="1280.0" opacity="0.88">
+            <image>
+                <Image url="@../images/68851d4ac9c09584489b6e32c00b45bd.jpg" />
+            </image>
+        </ImageView>
         <VBox alignment="CENTER" layoutX="408.0" layoutY="64.0" opacity="0.77" prefHeight="596.0" prefWidth="346.0" spacing="20.0" style="-fx-background-color: #FFFF;">
             <children>
                 <Label fx:id="maison" text="Maison d'hote:">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font></Label>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Label>
                 <Label fx:id="user" text="Touriste:">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font></Label>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Label>
                 <Label fx:id="nbAdultes" text="Nombre D'adultes :">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font></Label>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Label>
                 <Label fx:id="nbEnfants" text="Nombre D'enfants :">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font></Label>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Label>
                 <Label fx:id="arrangement" text="Arrangement :">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font></Label>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Label>
                 <Label fx:id="repartition" text="Repartition :">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font></Label>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Label>
                 <Label fx:id="dateDepart" text="Date Depart :">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font></Label>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Label>
                 <Label fx:id="dateArrivee" text="Date D'arrivee:">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font></Label>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Label>
                 <HBox alignment="CENTER" prefHeight="59.0" prefWidth="346.0" spacing="10">
                     <children>
                         <Button fx:id="modifier" mnemonicParsing="false" onAction="#modifier" text="Modifier" textFill="#1e0707">
                             <HBox.margin>
                                 <Insets />
                             </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
                         </Button>
                     </children>
                 </HBox>
             </children>
-         <padding>
-            <Insets top="50.0" />
-         </padding>
+            <padding>
+                <Insets top="50.0" />
+            </padding>
         </VBox>
+        <ImageView fx:id="Qr_id" fitHeight="150.0" fitWidth="200.0" layoutX="963.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true" />
     </children>
 </AnchorPane>

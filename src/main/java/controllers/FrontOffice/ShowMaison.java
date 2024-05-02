@@ -1,5 +1,10 @@
 package controllers.FrontOffice;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
 import entities.Maison;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,8 +18,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 
 public class ShowMaison {
 
@@ -67,6 +75,8 @@ public class ShowMaison {
         dispo.setText("Disponibilité: " + maison.getDisponibilite());
         prix.setText("Prix: " + maison.getPrix());
         des.setText("Description: " + maison.getDescription());
+
+        GenerateQR();
 
 
 
@@ -129,5 +139,26 @@ public class ShowMaison {
             e.printStackTrace();
         }
     }
+    //QR
+    @FXML
+    private ImageView Qr_id;
 
+    public void GenerateQR() {
+        try {
+            String data = maison.toString();
+            String path = "QrGen.jpg";
+            BitMatrix matrix = null;
+            matrix = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, 150, 150);
+            MatrixToImageWriter.writeToPath(matrix, "jpg", Paths.get(path));
+
+            // Convert BitMatrix to BufferedImage
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            MatrixToImageWriter.writeToStream(matrix, "JPG", outputStream);
+            ByteArrayInputStream inputStream = new ByteArrayInputStream(outputStream.toByteArray());
+            javafx.scene.image.Image image = new Image(inputStream);
+            Qr_id.setImage(image);
+        } catch (WriterException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

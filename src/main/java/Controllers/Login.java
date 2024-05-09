@@ -1,16 +1,10 @@
 package Controllers;
 
-import java.io.IOException;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-
 import Entities.User;
 import Services.UserService;
 import Utils.DataSource;
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,10 +19,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import com.twilio.Twilio;
-import com.twilio.converter.Promoter;
-import com.twilio.rest.api.v2010.account.Message;
-import com.twilio.type.PhoneNumber;
+import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 public class Login {
 
@@ -64,15 +61,15 @@ public class Login {
         String email = email_tf.getText();
         String password = password_tf.getText();
 
-        Connection connection = DataSource.getInstance().getCnx();  // Get connection
+        Connection connection = DataSource.getInstance().getCnx();
 
         try {
-            String query = "SELECT * FROM utilisateur WHERE email = ? AND password = ?";  // Query
+            String query = "SELECT * FROM utilisateur WHERE email = ? AND password = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
 
-            ResultSet resultSet = preparedStatement.executeQuery();  // Execute query
+            ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
                 status = resultSet.getString("status");
@@ -115,9 +112,9 @@ public class Login {
                                 "Tuniworld : You are Banned (3 failed attempts to login)")
                         .create();
                 }
-                System.out.println("Invalid credentials.");  // Display error message
+                System.out.println("Invalid credentials.");  
                 i++;
-                // ... handle incorrect credentials (e.g., display error message to user)
+
             }
         } catch (SQLException e) {
             System.out.println("SQL error: " + e.getMessage());
@@ -145,7 +142,7 @@ public class Login {
     @FXML
     void ViewPassword(MouseEvent event) {
         if (password_tf.isVisible()) {
-            // If the password field is visible, hide it and show the real password text
+
             String realPassword = password_tf.getText();
             TextField textField = new TextField(realPassword);
             textField.setPrefHeight(password_tf.getHeight());
@@ -157,19 +154,18 @@ public class Login {
             textField.setOnKeyPressed(password_tf.getOnKeyPressed());
             textField.setOnKeyReleased(password_tf.getOnKeyReleased());
             textField.focusedProperty().addListener((observable, oldValue, newValue) -> {
-                if (!newValue) { // When the new node loses focus
-                    // Restore the password field and hide the temporary text field
+                if (!newValue) {
                     password_tf.setText(textField.getText());
                     ((Pane)password_tf.getParent()).getChildren().remove(textField);
                     password_tf.setVisible(true);
                 }
             });
 
-            // Add the temporary text field to the same parent as the password field
+
             ((Pane)password_tf.getParent()).getChildren().add(textField);
             password_tf.setVisible(false); // Hide the password field
         } else {
-            // If the password field is hidden, show it again
+
             password_tf.setVisible(true);
             ((Pane)password_tf.getParent()).getChildren().removeIf(node -> node.getId() != null && node.getId().equals("password_tf"));
         }

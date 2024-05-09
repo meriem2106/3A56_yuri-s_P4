@@ -1,16 +1,5 @@
 package Controllers;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import java.security.GeneralSecurityException;
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.Period;
-import java.util.*;
-
 import Entities.User;
 import Services.UserService;
 import javafx.event.ActionEvent;
@@ -29,6 +18,19 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.ResourceBundle;
 
 public class Signup {
 

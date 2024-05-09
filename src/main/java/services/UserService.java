@@ -250,7 +250,6 @@ public class UserService implements UserInterface{
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
         return user;
     }
 
@@ -335,5 +334,4 @@ public class UserService implements UserInterface{
         }
         return 0;
     }
-
 }

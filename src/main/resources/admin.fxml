@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="624.0" maxWidth="811.0" minHeight="624.0" minWidth="811.0" prefHeight="624.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Admin">
+   <children>
+      <ImageView fitHeight="624.0" fitWidth="811.0" pickOnBounds="true" style="-fx-opacity: 0.5;">
+         <image>
+            <Image url="@images/tunisia.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="42.0" layoutY="27.0" prefHeight="58.0" prefWidth="291.0" text="List of Users :">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Pane layoutX="24.0" layoutY="93.0" prefHeight="515.0" prefWidth="466.0" style="-fx-border-radius: 20; -fx-border-color: #31363F;">
+         <children>
+            <GridPane fx:id="gridPane" layoutX="8.0" layoutY="7.0" prefHeight="0.0" prefWidth="0.0">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </children>
+      </Pane>
+      <VBox layoutX="578.0" layoutY="93.0" prefHeight="366.0" prefWidth="168.0">
+         <children>
+            <ImageView fx:id="image_user" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <HBox prefHeight="32.0" prefWidth="200.0" />
+            <VBox prefHeight="64.0" prefWidth="200.0">
+               <children>
+                  <HBox prefHeight="36.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Nom :">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <VBox prefHeight="36.0" prefWidth="53.0" />
+                        <Label fx:id="nom_user" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="43.0" prefWidth="200.0" />
+            <VBox prefHeight="48.0" prefWidth="200.0">
+               <children>
+                  <HBox prefHeight="55.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Prenom :">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <VBox prefHeight="100.0" prefWidth="39.0" />
+                        <Label fx:id="prenom_user" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="80.0" prefWidth="200.0" />
+            <VBox prefHeight="113.0" prefWidth="200.0">
+               <children>
+                  <HBox prefHeight="58.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#details" prefHeight="25.0" prefWidth="60.0" text="Details">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <VBox prefHeight="49.0" prefWidth="50.0" />
+                        <Button mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="60.0" text="Delete" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

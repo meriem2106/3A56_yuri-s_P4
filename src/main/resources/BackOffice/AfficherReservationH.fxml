@@ -53,7 +53,8 @@
                   </HBox>
                   <HBox fx:id="usersBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links">
                      <children>
-                        <Label fx:id="usersText" styleClass="nav-links" text="Utilisateurs" textFill="WHITE">
+                        <Button mnemonicParsing="false" styleClass="nav-links" text="Utilisateurs" />
+                        <Label styleClass="nav-links" textFill="WHITE">
                            <font>
                               <Font name="Montserrat Regular" size="14.0" />
                            </font>
@@ -68,7 +69,8 @@
                   </HBox>
                   <HBox fx:id="fundrisingBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links">
                      <children>
-                        <Label fx:id="fundrisingText" styleClass="nav-links" text="Hotels" textFill="WHITE">
+                        <Button fx:id="hotels" mnemonicParsing="false" onAction="#hotels" styleClass="nav-links" text="Hotels" />
+                        <Label styleClass="nav-links" textFill="WHITE">
                            <font>
                               <Font name="Montserrat Regular" size="18.0" />
                            </font>
@@ -83,7 +85,8 @@
                   </HBox>
                   <HBox fx:id="productsBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links">
                      <children>
-                        <Label fx:id="productsText" styleClass="activeText" text="Reservations Hotels" textFill="WHITE">
+                        <Button fx:id="reservationsH" mnemonicParsing="false" onAction="#reservationsH" styleClass="nav-links" text="Reservations Hotels" />
+                        <Label styleClass="activeText" textFill="WHITE">
                            <font>
                               <Font name="Montserrat Regular" size="14.0" />
                            </font>
@@ -101,7 +104,8 @@
                   </HBox>
                   <HBox fx:id="collectBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links">
                      <children>
-                        <Label fx:id="collectText" prefHeight="25.0" prefWidth="166.0" styleClass="nav-links" text="Reservations Maisons" textFill="WHITE">
+                        <Button fx:id="reservationsM" mnemonicParsing="false" onAction="#reservationsM" prefHeight="35.0" prefWidth="350.0" styleClass="nav-links" text="Reservations Maisons" />
+                        <Label prefHeight="25.0" prefWidth="166.0" styleClass="nav-links" textFill="WHITE">
                            <font>
                               <Font name="Montserrat Regular" size="14.0" />
                            </font>
@@ -121,7 +125,8 @@
                   </HBox>
                   <HBox fx:id="collectBtn1" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links">
                      <children>
-                        <Label fx:id="collectText1" prefHeight="25.0" prefWidth="166.0" styleClass="nav-links" text="Maisons d'hote" textFill="WHITE">
+                        <Button fx:id="maisons" mnemonicParsing="false" onAction="#maisons" prefHeight="35.0" prefWidth="297.0" styleClass="nav-links" text="Maisons d'hote" />
+                        <Label prefHeight="25.0" prefWidth="166.0" styleClass="nav-links" textFill="WHITE">
                            <font>
                               <Font name="Montserrat Regular" size="14.0" />
                            </font>

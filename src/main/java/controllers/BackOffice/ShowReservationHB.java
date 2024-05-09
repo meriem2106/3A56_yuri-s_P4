@@ -2,11 +2,17 @@ package controllers.BackOffice;
 
 import entities.Maison;
 import entities.ReservationH;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 
 import java.io.File;
+import java.io.IOException;
 
 public class ShowReservationHB {
 
@@ -50,6 +56,17 @@ public class ShowReservationHB {
         dateDepart.setText("Date de depart: " + r.getDateDepart());
 
 
+    }
+
+    @FXML
+    private Button goback_butt;
+
+    @FXML
+    void GoBack(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/BackOffice/AfficherReservationH.fxml"));
+        Parent loginSuccessRoot = loader.load();
+        Scene scene = goback_butt.getScene();
+        scene.setRoot(loginSuccessRoot);
     }
 
 }

@@ -1,6 +1,7 @@
 package entities;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class ReservationH {
 
@@ -129,6 +130,19 @@ public class ReservationH {
 
     public void setUtilisateur(Utilisateur utilisateur) {
         this.utilisateur = utilisateur;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ReservationH that = (ReservationH) o;
+        return id == that.id && nbAdultes == that.nbAdultes && nbEnfants == that.nbEnfants && Objects.equals(arrangement, that.arrangement) && Objects.equals(repartition, that.repartition) && Objects.equals(dateArrivee, that.dateArrivee) && Objects.equals(dateDepart, that.dateDepart) && Objects.equals(hotel, that.hotel) && Objects.equals(utilisateur, that.utilisateur);
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
     }
 
     @Override

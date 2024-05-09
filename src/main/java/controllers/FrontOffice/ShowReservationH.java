@@ -10,6 +10,9 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.properties.TextAlignment;
+import com.stripe.param.checkout.SessionCreateParams;
+import com.twilio.rest.taskrouter.v1.workspace.task.Reservation;
+import entities.Hotel;
 import entities.ReservationH;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,6 +55,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import java.nio.file.Paths;
 
+import com.stripe.Stripe;
+import com.stripe.exception.StripeException;
+import com.stripe.model.PaymentIntent;
+import java.net.URISyntaxException;
+import java.net.URI;
+import java.awt.Desktop;
+import java.sql.SQLException;
+
+import com.stripe.model.checkout.Session;
+import com.stripe.param.checkout.SessionCreateParams;
+import services.ServiceReservationH;
+
 
 public class ShowReservationH {
 
@@ -85,9 +100,17 @@ public class ShowReservationH {
     private Label repartition;
 
     @FXML
+    private Button payer;
+
+    @FXML
+    private Label prix;
+
+    @FXML
     private Button exporter;
 
     private ReservationH reservationH;
+
+    ServiceReservationH srh= new ServiceReservationH();
 
     public void setData(ReservationH reservationH) {
         this.reservationH = reservationH;
@@ -99,6 +122,7 @@ public class ShowReservationH {
         arrangement.setText("Arrangement: " + reservationH.getArrangement());
         dateArrivee.setText("Date d'arrivee: " + reservationH.getDateArrivee());
         dateDepart.setText("Date de depart: " + reservationH.getDateDepart());
+        prix.setText("Le prix a payer est egale a" +reservationH.getHotel().getPrix());
         GenerateQR();
 
     }
@@ -111,27 +135,17 @@ public class ShowReservationH {
         Paragraph title = new Paragraph("Réservation d'Hôtel").setFont(font).setFontSize(20).setTextAlignment(TextAlignment.CENTER);
         document.add(title);
 
-        // Ajouter les détails de la réservation dans un tableau
-        Table table = new Table(2);
-        table.addCell(new Paragraph("Hôtel: ").setFont(font));
-        table.addCell(new Paragraph(reservation.getHotel().getNom()).setFont(font));
-        table.addCell(new Paragraph("Touriste: ").setFont(font));
-        table.addCell(new Paragraph(reservation.getUtilisateur().getPrenom() + " " + reservation.getUtilisateur().getNom()).setFont(font));
-        table.addCell(new Paragraph("Nombre d'adultes: ").setFont(font));
-        table.addCell(new Paragraph(String.valueOf(reservation.getNbAdultes())).setFont(font));
-        table.addCell(new Paragraph("Nombre d'enfants: ").setFont(font));
-        table.addCell(new Paragraph(String.valueOf(reservation.getNbEnfants())).setFont(font));
-        table.addCell(new Paragraph("Repartition: ").setFont(font));
-        table.addCell(new Paragraph(reservation.getRepartition()).setFont(font));
-        table.addCell(new Paragraph("Arrangement: ").setFont(font));
-        table.addCell(new Paragraph(reservation.getArrangement()).setFont(font));
-        table.addCell(new Paragraph("Date d'arrivée: ").setFont(font));
-        table.addCell(new Paragraph(reservation.getDateArrivee().toString()).setFont(font));
-        table.addCell(new Paragraph("Date de départ: ").setFont(font));
-        table.addCell(new Paragraph(reservation.getDateDepart().toString()).setFont(font));
-
-        document.add(table);
+        document.add(new Paragraph("Hôtel: " + reservation.getHotel().getImage()));
+        document.add(new Paragraph("Hôtel: " + reservation.getHotel().getNom()).setFont(font));
+        document.add(new Paragraph("Touriste: " + reservation.getUtilisateur().getPrenom() + " " + reservation.getUtilisateur().getNom()).setFont(font));
+        document.add(new Paragraph("Nombre d'adultes: " + reservation.getNbAdultes()).setFont(font));
+        document.add(new Paragraph("Nombre d'enfants: " + reservation.getNbEnfants()).setFont(font));
+        document.add(new Paragraph("Repartition: " + reservation.getRepartition()).setFont(font));
+        document.add(new Paragraph("Arrangement: " + reservation.getArrangement()).setFont(font));
+        document.add(new Paragraph("Date d'arrivée: " + reservation.getDateArrivee().toString()).setFont(font));
+        document.add(new Paragraph("Date de départ: " + reservation.getDateDepart().toString()).setFont(font));
     }
+
 
     @FXML
     void exporter(ActionEvent event) {
@@ -189,6 +203,73 @@ public class ShowReservationH {
             e.printStackTrace();
         }
     }
+
+
+    @FXML
+    void payer(ActionEvent event) {
+        String prixString = reservationH.getHotel().getPrix();
+        if (prixString == null) {
+            // Gérer le cas où le prix est null
+            System.err.println("Le prix de l'hôtel est null.");
+            return;
+        }
+
+        try {
+            Double m = Double.parseDouble(prixString);
+            Double montant = m*reservationH.getNbAdultes()+(reservationH.getNbEnfants()*(0.5*m));
+            Stripe.apiKey = "sk_test_51Oop0OBQCHJCIBnOp9sP9YNzRUVOleVW4d5FgsXox60XUClnwh8ZiMMamUtpz8LgHkIfYzQw8q40ocGEf1fVkj7G00Qk2ILK7A";
+
+            SessionCreateParams params = SessionCreateParams.builder()
+                    .addPaymentMethodType(SessionCreateParams.PaymentMethodType.CARD)
+                    .setMode(SessionCreateParams.Mode.PAYMENT)
+                    .setSuccessUrl("https://ruperhat.com/wp-content/uploads/2020/06/Paymentsuccessful21.png")
+                    .setCancelUrl("https://hypixel.net/attachments/1690923493412-png.3230490/")
+                    .addLineItem(
+                            SessionCreateParams.LineItem.builder()
+                                    .setQuantity(1L)
+                                    .setPriceData(
+                                            SessionCreateParams.LineItem.PriceData.builder()
+                                                    .setCurrency("usd")
+                                                    .setUnitAmount((long) (montant * 100)) // Stripe expects the amount in cents
+                                                    .setProductData(
+                                                            SessionCreateParams.LineItem.PriceData.ProductData.builder()
+                                                                    .setName("test")
+
+                                                                    .setDescription("TUNI'WORLD, SEE THROUGH MY EYE")
+                                                                    .build()
+                                                    )
+                                                    .build()
+                                    )
+                                    .build()
+                    )
+                    .build();
+
+            Session session = Session.create(params);
+            URI checkoutUri = new URI(session.getUrl());
+            //loadCheckoutPage(checkoutUri.toString());
+
+            // Ouvre l'URL dans le navigateur par défaut
+            if (Desktop.isDesktopSupported()) {
+                Desktop.getDesktop().browse(checkoutUri);
+            } else {
+                // Gérer le cas où l'ouverture de l'URL n'est pas supportée
+                System.err.println("Ouverture de l'URL non supportée.");
+            }
+        } catch (NumberFormatException e) {
+            // Gérer le cas où le prix n'est pas un nombre valide
+            System.err.println("Le prix de l'hôtel n'est pas un nombre valide : " + prixString);
+            e.printStackTrace();
+        } catch (StripeException e) {
+            System.err.println("Error creating Checkout Session: " + e.getMessage());
+            e.printStackTrace();
+            // Handle the error, display a message to the user, etc.
+        } catch (Exception ex) {
+            System.err.println("Error redirecting to Stripe Checkout: " + ex.getMessage());
+            ex.printStackTrace();
+            // Handle the error, display a message to the user, etc.
+        }
+    }
+
 
     private void downloadPDF(File file, Window window) {
         // Créer un FileChooser pour sélectionner l'emplacement de téléchargement

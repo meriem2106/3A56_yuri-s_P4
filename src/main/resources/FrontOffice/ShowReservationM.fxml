@@ -70,4 +70,9 @@
         </VBox>
         <ImageView fx:id="Qr_id" fitHeight="150.0" fitWidth="200.0" layoutX="963.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true" />
     </children>
+    <Button fx:id="goback_butt" layoutX="611.0" layoutY="627.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="51.0" prefWidth="103.0" text="Go Back">
+        <font>
+            <Font name="System Bold" size="13.0" />
+        </font>
+    </Button>
 </AnchorPane>

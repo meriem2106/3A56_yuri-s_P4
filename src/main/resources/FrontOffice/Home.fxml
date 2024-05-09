@@ -28,12 +28,12 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="225.0">
+            <HBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="171.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <children>
-                  <HBox alignment="CENTER" prefHeight="62.0" prefWidth="154.0">
+                  <HBox alignment="CENTER" prefHeight="62.0" prefWidth="123.0">
                      <opaqueInsets>
                         <Insets right="15.0" />
                      </opaqueInsets>
@@ -43,22 +43,22 @@
                   </HBox>
                </children>
             </HBox>
-            <HBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="108.0">
+            <HBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="89.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <children>
-                  <HBox alignment="CENTER" prefHeight="62.0" prefWidth="107.0">
+                  <HBox alignment="CENTER" prefHeight="62.0" prefWidth="87.0">
                      <opaqueInsets>
                         <Insets right="15.0" />
                      </opaqueInsets>
                      <children>
-                        <Label prefHeight="25.0" prefWidth="102.0" styleClass="nav-links" text="Nos Hotes" textFill="WHITE" />
+                        <Label prefHeight="25.0" prefWidth="89.0" styleClass="nav-links" text="Nos Hotes" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="163.0">
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="115.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
@@ -66,7 +66,7 @@
                   <Label styleClass="nav-links" text="Nos Produits" textFill="WHITE" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="158.0">
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="136.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
@@ -74,7 +74,7 @@
                   <Label styleClass="nav-links" text="Nos Evenements" textFill="WHITE" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="188.0">
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="190.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
@@ -82,12 +82,12 @@
                   <Label styleClass="nav-links" text="Nos Hebergements" textFill="WHITE" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="79.0">
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="114.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
                <children>
-                  <Label styleClass="nav-links" text="Contact" textFill="WHITE" />
+                  <Label prefHeight="25.0" prefWidth="127.0" styleClass="nav-links" text="Reclamations" textFill="WHITE" />
                </children>
             </HBox>
          </children>

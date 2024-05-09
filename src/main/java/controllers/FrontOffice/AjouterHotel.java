@@ -1,14 +1,19 @@
 package controllers.FrontOffice;
 
+import controllers.BackOffice.AfficherReservationH;
 import entities.Hotel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import services.ServiceHotel;
+import javafx.stage.Stage;
 
 
 import javafx.scene.input.MouseEvent;
@@ -20,6 +25,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.scene.Node;
 
 
 public class AjouterHotel implements Initializable {
@@ -87,10 +93,21 @@ public class AjouterHotel implements Initializable {
 
             // Le reste de votre logique d'ajout d'hôtel ici
             sh.ajouter(new Hotel(nbetoilesHotel.getValue(), PrixHotel.getText(), nomHotel.getText(), mailHotel.getText(), telHotel.getText(), locHotel.getText(), villeHotel.getValue(), dispoHotel.getValue(), desHotel.getText(), imageHotel.getText()));
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FrontOffice/Home.fxml"));
+
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
         } catch (NumberFormatException e) {
             // Gérer l'erreur de conversion de la chaîne en entier
             e.printStackTrace();
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

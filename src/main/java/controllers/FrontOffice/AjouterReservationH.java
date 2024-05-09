@@ -53,7 +53,7 @@ public class AjouterReservationH implements Initializable {
 
     ServiceReservationH srh = new ServiceReservationH();
 
-    Utilisateur u = new Utilisateur(1,"abid","meriem","meriem@gmail.com","hehehe",new Date(100, 6, 11),"", Arrays.asList("proprietaire"),"","");
+    Utilisateur u = new Utilisateur(3,"abid","amina","meriem@gmail.com","hehehe",new Date(100, 6, 11),"", Arrays.asList("proprietaire"),"","");
 
 
     ObservableList<String> repartitionList = FXCollections.

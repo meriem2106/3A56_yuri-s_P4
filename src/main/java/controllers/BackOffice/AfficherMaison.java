@@ -50,12 +50,6 @@ public class AfficherMaison implements Initializable {
     private HBox collectBtn5;
 
     @FXML
-    private Label collectText;
-
-    @FXML
-    private Label collectText1;
-
-    @FXML
     private Label collectText2;
 
     @FXML
@@ -89,10 +83,13 @@ public class AfficherMaison implements Initializable {
     private HBox fundrisingBtn;
 
     @FXML
-    private Label fundrisingText;
+    private Button hotels;
 
     @FXML
     private ListView<Maison> listMaison;
+
+    @FXML
+    private Button maisons;
 
     @FXML
     private HBox navBarLogout;
@@ -104,7 +101,10 @@ public class AfficherMaison implements Initializable {
     private HBox productsBtn;
 
     @FXML
-    private Label productsText;
+    private Button reservationsH;
+
+    @FXML
+    private Button reservationsM;
 
     @FXML
     private Button show;
@@ -114,9 +114,6 @@ public class AfficherMaison implements Initializable {
 
     @FXML
     private HBox usersBtn;
-
-    @FXML
-    private Label usersText;
 
 
 
@@ -262,6 +259,129 @@ public class AfficherMaison implements Initializable {
         listMaison.setItems(MList);
     }
 
+    @FXML
+    void hotels(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/BackOffice/AfficherHotel.fxml"));
+            Parent root = loader.load();
+
+
+            AfficherHotel controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void maisons(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/BackOffice/AfficherMaison.fxml"));
+            Parent root = loader.load();
+
+
+            AfficherMaison controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void reservationsH(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/BackOffice/AfficherReservationH.fxml"));
+            Parent root = loader.load();
+
+
+            AfficherReservationH controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void reservationsM(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/BackOffice/AfficherReservationM.fxml"));
+            Parent root = loader.load();
+
+
+            AfficherReservationM controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 

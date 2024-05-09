@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="200.0" maxWidth="200.0" minHeight="200.0" minWidth="200.0" onMouseClicked="#Click" prefHeight="150.0" prefWidth="150.0" style="-fx-border-radius: 25; -fx-border-color: #DDDDDD; -fx-background-radius: 25; -fx-background-color: #9AC8CD; -fx-padding: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ItemUser">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="nom_prenom" layoutX="16.0" layoutY="146.0" prefHeight="17.0" prefWidth="171.0" text="Label" />
+            <Label fx:id="roles" layoutX="15.0" layoutY="169.0" prefHeight="17.0" prefWidth="171.0" text="Label" />
+         </children>
+      </Pane>
+      <ImageView fx:id="image_user" fitHeight="122.0" fitWidth="171.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

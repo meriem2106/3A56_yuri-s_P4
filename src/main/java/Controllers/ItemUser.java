@@ -53,7 +53,6 @@ public class ItemUser {
         UserService userService = new UserService();
         List<User> L = new ArrayList<>();
         myListener.onClick(user);
-
         L = userService.rechercheUser(id);
         u.setId(L.get(0).getId());
         u.setNom(L.get(0).getNom());

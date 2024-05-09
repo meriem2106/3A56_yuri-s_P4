@@ -1,7 +1,7 @@
 package Services;
 
 import Entities.User;
-import Utils.DataSource;
+import utils.DataSource;
 import com.google.gson.Gson;
 
 import java.sql.*;

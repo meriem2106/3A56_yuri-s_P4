@@ -48,7 +48,7 @@
                   <Insets />
                </opaqueInsets>
                <children>
-                  <HBox alignment="CENTER" prefHeight="62.0" prefWidth="87.0">
+                  <HBox alignment="CENTER" prefHeight="62.0" prefWidth="103.0">
                      <opaqueInsets>
                         <Insets right="15.0" />
                      </opaqueInsets>
@@ -58,7 +58,7 @@
                   </HBox>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="115.0">
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="131.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
@@ -66,7 +66,7 @@
                   <Label styleClass="nav-links" text="Nos Produits" textFill="WHITE" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="136.0">
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="162.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
@@ -74,7 +74,7 @@
                   <Label styleClass="nav-links" text="Nos Evenements" textFill="WHITE" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="190.0">
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="224.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
@@ -82,12 +82,12 @@
                   <Label styleClass="nav-links" text="Nos Hebergements" textFill="WHITE" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="114.0">
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="149.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
                <children>
-                  <Label prefHeight="25.0" prefWidth="127.0" styleClass="nav-links" text="Reclamations" textFill="WHITE" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="127.0" styleClass="nav-links" text="Reclamations" textFill="WHITE" />
                </children>
             </HBox>
          </children>

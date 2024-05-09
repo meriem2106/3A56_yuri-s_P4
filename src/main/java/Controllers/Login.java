@@ -174,5 +174,4 @@ public class Login {
             ((Pane)password_tf.getParent()).getChildren().removeIf(node -> node.getId() != null && node.getId().equals("password_tf"));
         }
     }
-
 }

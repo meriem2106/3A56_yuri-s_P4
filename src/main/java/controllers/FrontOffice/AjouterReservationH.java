@@ -4,7 +4,6 @@ import controllers.Login;
 import entities.Hotel;
 import entities.ReservationH;
 import entities.User;
-import entities.Utilisateur;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,8 +21,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class AjouterReservationH implements Initializable {

@@ -1,17 +1,7 @@
 package tests;
 //
-import entities.*;
-import services.ServiceHotel;
-import services.ServiceMaison;
-import services.ServiceReservationH;
-import services.ServiceReservationM;
 //
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
+
 //
 ////TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 //// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

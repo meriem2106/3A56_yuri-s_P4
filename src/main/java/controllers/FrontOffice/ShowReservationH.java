@@ -8,11 +8,8 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.properties.TextAlignment;
 import com.stripe.param.checkout.SessionCreateParams;
-import com.twilio.rest.taskrouter.v1.workspace.task.Reservation;
-import entities.Hotel;
 import entities.ReservationH;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,40 +28,28 @@ import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
 
-import javafx.embed.swing.SwingFXUtils;
-import net.glxn.qrgen.javase.QRCode;
-import javafx.scene.image.WritableImage;
-
-import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
-import com.google.zxing.client.j2se.MatrixToImageWriter;
-import com.google.zxing.common.BitMatrix;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
+
 import java.nio.file.Paths;
 
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
-import com.stripe.model.PaymentIntent;
-import java.net.URISyntaxException;
+
 import java.net.URI;
 import java.awt.Desktop;
-import java.sql.SQLException;
 
 import com.stripe.model.checkout.Session;
-import com.stripe.param.checkout.SessionCreateParams;
 import services.ServiceReservationH;
 
 

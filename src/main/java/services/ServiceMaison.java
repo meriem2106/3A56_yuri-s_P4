@@ -1,7 +1,6 @@
 package services;
 
 
-import entities.Hotel;
 import entities.Maison;
 import utils.MyDatabase;
 

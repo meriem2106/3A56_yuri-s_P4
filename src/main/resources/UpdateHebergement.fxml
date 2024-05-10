@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="403.0" prefWidth="631.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterHebergement">
+   <children>
+      <Text fill="WHITE" layoutX="356.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier Votre Hebergement " />
+      <Button fx:id="modifier" layoutX="407.0" layoutY="342.0" mnemonicParsing="false" onAction="#modifierProduit" style="-fx-background-color: #5F9EA0;" text="modifier" />
+      <GridPane layoutX="270.0" layoutY="119.0" prefHeight="209.0" prefWidth="293.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.71702620770097" minWidth="10.0" prefWidth="75.16983103930386" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="226.41506750501335" minWidth="10.0" prefWidth="219.16980219481496" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="mot de passe" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation" GridPane.rowIndex="3" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prix " GridPane.rowIndex="4" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Image " GridPane.rowIndex="6" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code a Barre" GridPane.rowIndex="7" />
+            <TextField fx:id="nomTF" GridPane.columnIndex="1" />
+            <TextField fx:id="emailTF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="passwordTF" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="locTF" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="prixTF" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <children>
+                  <HBox prefHeight="30.0" prefWidth="219.0">
+                     <children>
+                        <Button fx:id="imFX2" mnemonicParsing="false" onAction="#chargerQRImage" text="Button" />
+                        <TextField fx:id="imaQr" prefHeight="25.0" prefWidth="177.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <Button fx:id="imFX1" mnemonicParsing="false" onAction="#chargerImage" text="Button" />
+                  <TextField fx:id="imaTF" prefHeight="25.0" prefWidth="172.0" />
+               </children>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone" GridPane.rowIndex="5" />
+            <TextField fx:id="teleTF" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <ImageView fitHeight="405.0" fitWidth="212.0" layoutX="14.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../13-e1555921934498-min-scaled.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

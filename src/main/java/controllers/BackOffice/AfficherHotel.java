@@ -1,5 +1,6 @@
 package controllers.BackOffice;
 
+import controllers.DashboardAdmin;
 import entities.Hotel;
 import entities.Maison;
 import javafx.collections.FXCollections;
@@ -122,13 +123,43 @@ public class AfficherHotel implements Initializable {
 
     @FXML
     private Label usersText;
-
+    @FXML
+    private Button utilisateurs;
 
 
 
     ServiceHotel hs = new ServiceHotel();
 
+    @FXML
+    void utilisateurs(ActionEvent event) {
+        try {
 
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/DashboardAdmin.fxml"));
+            Parent root = loader.load();
+
+
+            DashboardAdmin controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void delete(ActionEvent event) {

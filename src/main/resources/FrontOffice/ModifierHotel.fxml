@@ -118,7 +118,11 @@
            </HBox>
       
                 <Button alignment="CENTER" contentDisplay="CENTER" onAction="#modify_and_return" prefHeight="37.0" prefWidth="122.0" style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Enregistrer" textFill="#7804e4" />
-      
+          <Button fx:id="goback_butt" layoutX="611.0" layoutY="627.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="51.0" prefWidth="103.0" text="Go Back">
+              <font>
+                  <Font name="System Bold" size="13.0" />
+              </font>
+          </Button>
             </VBox>
    </children>
 

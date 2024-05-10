@@ -3,7 +3,7 @@ package services;
 import entities.Hotel;
 import entities.Maison;
 import entities.ReservationH;
-import entities.Utilisateur;
+import entities.User;
 import utils.MyDatabase;
 
 import java.sql.*;
@@ -102,7 +102,7 @@ public class ServiceReservationH implements IService<ReservationH>{
             reservationH.setHotel(hotel);
 
             // Ajouter le nom de l'utilisateur
-            Utilisateur utilisateur = new Utilisateur();
+            User utilisateur = new User();
             utilisateur.setNom(rs.getString("utilisateur_nom"));
             utilisateur.setPrenom(rs.getString("utilisateur_prenom"));
             reservationH.setUtilisateur(utilisateur);

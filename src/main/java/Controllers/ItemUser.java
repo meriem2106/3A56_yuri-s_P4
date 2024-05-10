@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,8 +9,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import Entities.User;
-import Services.UserService;
+import entities.User;
+import services.UserService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -80,7 +80,7 @@ public class ItemUser {
         nom_prenom.setText(nom+" "+prenom);
         this.roles.setText(status);
 
-        String fullurl = "C:\\final\\public\\uploads\\files\\" + file;
+        String fullurl = "C:\\Users\\THINKPAD\\Desktop\\finalaa\\public\\uploads\\files\\" + file;
         System.out.println("full url " + fullurl);
 
         try {

@@ -106,7 +106,7 @@ public class ServiceReservationM implements IService<ReservationM>{
             reservationM.setMaison(maison);
 
             // Ajouter le nom de l'utilisateur
-            Utilisateur utilisateur = new Utilisateur();
+            User utilisateur = new User();
             utilisateur.setNom(rs.getString("utilisateur_nom"));
             utilisateur.setPrenom(rs.getString("utilisateur_prenom"));
             reservationM.setUtilisateur(utilisateur);

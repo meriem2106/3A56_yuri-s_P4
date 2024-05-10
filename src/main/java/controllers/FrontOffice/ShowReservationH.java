@@ -217,7 +217,7 @@ public class ShowReservationH {
         try {
             Double m = Double.parseDouble(prixString);
             Double montant = m*reservationH.getNbAdultes()+(reservationH.getNbEnfants()*(0.5*m));
-            Stripe.apiKey = "sk_test_51Oop0OBQCHJCIBnOp9sP9YNzRUVOleVW4d5FgsXox60XUClnwh8ZiMMamUtpz8LgHkIfYzQw8q40ocGEf1fVkj7G00Qk2ILK7A";
+            Stripe.apiKey = "sk_test_51PEgnxHglUm2xQEWnPH0spgpPK1j5uOZB4RBNaAn07hEy5slsc0itbQo9KoRqTxasJaJn2voW5ZRkdnofwOPGtJU00QGdB0nMX";
 
             SessionCreateParams params = SessionCreateParams.builder()
                     .addPaymentMethodType(SessionCreateParams.PaymentMethodType.CARD)
@@ -330,4 +330,14 @@ public class ShowReservationH {
         Qr_id.setImage(img);
     }
 
+    @FXML
+    private Button goback_butt;
+
+    @FXML
+    void GoBack(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FrontOffice/Home.fxml"));
+        Parent loginSuccessRoot = loader.load();
+        Scene scene = goback_butt.getScene();
+        scene.setRoot(loginSuccessRoot);
+    }
 }

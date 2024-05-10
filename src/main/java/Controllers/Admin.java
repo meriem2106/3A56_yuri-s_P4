@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -7,8 +7,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import Entities.User;
-import Services.UserService;
+import entities.User;
+import services.UserService;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

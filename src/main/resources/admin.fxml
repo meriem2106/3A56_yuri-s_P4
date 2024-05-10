@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="624.0" maxWidth="811.0" minHeight="624.0" minWidth="811.0" prefHeight="624.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Admin">
+<AnchorPane maxHeight="624.0" maxWidth="811.0" minHeight="624.0" minWidth="811.0" prefHeight="624.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Admin">
    <children>
       <ImageView fitHeight="624.0" fitWidth="811.0" pickOnBounds="true" style="-fx-opacity: 0.5;">
          <image>

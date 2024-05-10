@@ -1,6 +1,6 @@
-package Controllers;
+package controllers;
 
-import Services.UserService;
+import services.UserService;
 import utils.SendMail;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

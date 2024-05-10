@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -53,7 +52,7 @@
                   </HBox>
                   <HBox fx:id="usersBtn" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0" styleClass="nav-links">
                      <children>
-                        <Button mnemonicParsing="false" styleClass="nav-links" text="Utilisateurs" />
+                        <Button fx:id="utilisateurs" mnemonicParsing="false" onAction="#utilisateurs" styleClass="nav-links" text="Utilisateurs" />
                         <Label fx:id="usersText" styleClass="nav-links" textFill="WHITE">
                            <font>
                               <Font name="Montserrat Regular" size="14.0" />
@@ -233,40 +232,6 @@
                   <Insets right="16.0" />
                </HBox.margin>
             </HBox>
-            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" styleClass="nav-icon">
-               <children>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="10.0">
-                     <image>
-
-                     </image>
-                  </ImageView>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="20.0" styleClass="nav-notif-bg" translateX="-8.0" translateY="-14.0">
-                     <children>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="3" translateY="-1.0">
-                           <font>
-                              <Font name="Montserrat ExtraBold" size="15.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </HBox>
-               </children>
-               <HBox.margin>
-                  <Insets right="16.0" />
-               </HBox.margin>
-            </HBox>
-            <Text fx:id="navFullname" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-user-fullname" text="Braiek Ali">
-               <font>
-                  <Font name="Montserrat Bold" size="18.0" />
-               </font>
-               <HBox.margin>
-                  <Insets right="16.0" />
-               </HBox.margin>
-            </Text>
-            <Circle fx:id="circle" fill="DODGERBLUE" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
-               <HBox.margin>
-                  <Insets right="16.0" />
-               </HBox.margin>
-            </Circle>
          </children>
       </HBox>
       <Pane fx:id="content_area" layoutX="266.0" layoutY="78.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="1084.0" styleClass="dash__container-card">

@@ -34,7 +34,8 @@ public class AfficherReservationH implements Initializable {
 
     @FXML
     private Circle circle;
-
+    @FXML
+    private Button utilisateurs;
     @FXML
     private HBox collectBtn;
 

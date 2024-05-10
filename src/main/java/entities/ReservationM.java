@@ -13,12 +13,12 @@ public class ReservationM {
 
     private Maison maison;
 
-    private Utilisateur utilisateur;
+    private User utilisateur;
 
     public ReservationM() {
     }
 
-    public ReservationM(int id, int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart, Maison maison, Utilisateur utilisateur) {
+    public ReservationM(int id, int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart, Maison maison, User utilisateur) {
         this.id = id;
         this.nbAdultes = nbAdultes;
         this.nbEnfants = nbEnfants;
@@ -30,7 +30,7 @@ public class ReservationM {
         this.utilisateur = utilisateur;
     }
 
-    public ReservationM(int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart, Maison maison, Utilisateur utilisateur) {
+    public ReservationM(int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart, Maison maison, User utilisateur) {
         this.nbAdultes = nbAdultes;
         this.nbEnfants = nbEnfants;
         this.arrangement = arrangement;
@@ -115,11 +115,11 @@ public class ReservationM {
         this.maison = maison;
     }
 
-    public Utilisateur getUtilisateur() {
+    public User getUtilisateur() {
         return utilisateur;
     }
 
-    public void setUtilisateur(Utilisateur utilisateur) {
+    public void setUtilisateur(User utilisateur) {
         this.utilisateur = utilisateur;
     }
 

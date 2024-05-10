@@ -1,7 +1,9 @@
 package controllers.FrontOffice;
 
+import controllers.Login;
 import entities.Hotel;
 import entities.ReservationH;
+import entities.User;
 import entities.Utilisateur;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -52,9 +54,10 @@ public class AjouterReservationH implements Initializable {
     public Hotel hotelSelectionne;
 
     ServiceReservationH srh = new ServiceReservationH();
+    services.UserService userService = new services.UserService();
 
-    Utilisateur u = new Utilisateur(3,"abid","amina","meriem@gmail.com","hehehe",new Date(100, 6, 11),"", Arrays.asList("proprietaire"),"","");
-
+    //    Utilisateur u = new Utilisateur(3,"abid","amina","meriem@gmail.com","hehehe",new Date(100, 6, 11),"", Arrays.asList("proprietaire"),"","");
+    User u = userService.rechercheUser(Login.id).get(0);
 
     ObservableList<String> repartitionList = FXCollections.
             observableArrayList("All Inclusive", "Pension complete", "Demi Pension", "Logement Petit Dejeuner","Logement Simple");

@@ -1,7 +1,7 @@
-package Controllers;
+package controllers;
 
-import Entities.User;
-import Services.UserService;
+import entities.User;
+import services.UserService;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;

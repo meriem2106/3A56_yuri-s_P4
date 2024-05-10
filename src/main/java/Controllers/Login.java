@@ -1,7 +1,8 @@
-package Controllers;
+package controllers;
 
-import Entities.User;
-import Services.UserService;
+import controllers.FrontOffice.Home;
+import entities.User;
+import services.UserService;
 import utils.DataSource;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
@@ -44,7 +45,7 @@ public class Login {
     @FXML
     private FontAwesomeIconView ViewPassword;
 
-    static int id;
+    public static int id;
     static User user = new User();
     private int i = 0;
     private String status;
@@ -77,14 +78,18 @@ public class Login {
                 try {  // Handle FXML loading exceptions
                     if (email.equals("admin@tuniworld.tn")) {
                         user.setNom(resultSet.getString("nom"));
-                        Parent page1 = FXMLLoader.load(getClass().getResource("/dashboardAdmin.fxml"));
+                        Parent page1 = FXMLLoader.load(getClass().getResource("/BackOffice/AfficherHotel.fxml"));
                         Scene scene = new Scene(page1);
                         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         stage.setScene(scene);
                         stage.show();
                     } else if (resultSet.getString("status").equals("ACTIF")){
                         id = resultSet.getInt("id");
-                        Parent page1 = FXMLLoader.load(getClass().getResource("/Home.fxml"));
+                        System.out.println(id);
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FrontOffice/Home.fxml"));
+                        Parent page1 = loader.load();
+                        Home controller = loader.getController();
+                        controller.setData(id);
                         Scene scene = new Scene(page1);
                         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         stage.setScene(scene);

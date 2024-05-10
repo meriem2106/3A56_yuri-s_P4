@@ -30,6 +30,11 @@
             <Label fx:id="des" text="Description :" textFill="#0051ff" />
             <HBox alignment="CENTER" prefHeight="54.0" prefWidth="322.0" spacing="10">
                 <Button fx:id="modifier" mnemonicParsing="false" onAction="#modifier" prefHeight="26.0" prefWidth="186.0" text="Modifier" textFill="#000dff">
+                    <Button fx:id="goback_butt" layoutX="611.0" layoutY="627.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="51.0" prefWidth="103.0" text="Go Back">
+                        <font>
+                            <Font name="System Bold" size="13.0" />
+                        </font>
+                    </Button>
                     <HBox.margin>
                         <Insets />
                     </HBox.margin>
@@ -41,9 +46,5 @@
         </VBox>
         <ImageView fx:id="Qr_id" fitHeight="150.0" fitWidth="200.0" layoutX="1001.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true" />
     </children>
-    <Button fx:id="goback_butt" layoutX="611.0" layoutY="627.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="51.0" prefWidth="103.0" text="Go Back">
-        <font>
-            <Font name="System Bold" size="13.0" />
-        </font>
-    </Button>
+
 </AnchorPane>

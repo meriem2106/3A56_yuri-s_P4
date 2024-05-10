@@ -73,15 +73,16 @@
                   </Button>
                   <Button fx:id="exporter" mnemonicParsing="false" onAction="#exporter" prefHeight="26.0" prefWidth="95.0" text="Exporter" />
                   <Button fx:id="payer" mnemonicParsing="false" onAction="#payer" prefHeight="26.0" prefWidth="90.0" text="Payer" textFill="#040505" />
+                  <Button fx:id="goback_butt" layoutX="611.0" layoutY="627.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="51.0" prefWidth="103.0" text="Go Back">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
                </children>
             </HBox>
          </children>
       </VBox>
       <ImageView fx:id="Qr_id" fitHeight="150.0" fitWidth="200.0" layoutX="953.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true" />
    </children>
-   <Button fx:id="goback_butt" layoutX="611.0" layoutY="627.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="51.0" prefWidth="103.0" text="Go Back">
-      <font>
-         <Font name="System Bold" size="13.0" />
-      </font>
-   </Button>
+
 </AnchorPane>

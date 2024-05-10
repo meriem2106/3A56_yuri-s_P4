@@ -118,7 +118,13 @@
                </opaqueInsets>
             </VBox>
             <Button alignment="CENTER" onAction="#modify_and_return" prefHeight="38.0" prefWidth="711.0" style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Enregistrer" />
+            <Button fx:id="goback_butt" layoutX="611.0" layoutY="627.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="51.0" prefWidth="103.0" text="Go Back">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
    </children>
+
 </AnchorPane>

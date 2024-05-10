@@ -1,6 +1,6 @@
-package Services;
+package services;
 
-import Entities.User;
+import entities.User;
 
 import java.sql.SQLException;
 import java.time.LocalDate;

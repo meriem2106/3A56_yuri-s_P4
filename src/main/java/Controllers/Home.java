@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import Entities.User;
-import Services.UserService;
+import entities.User;
+import services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -56,7 +56,7 @@ public class Home {
         UserService userService = new UserService();
         User user = userService.rechercheUser(Login.id).get(0);
         nom_user.setText(user.getNom());
-        image_user.setImage(new Image(new FileInputStream("C:\\final\\public\\uploads\\files\\" + user.getFile())));
+        image_user.setImage(new Image(new FileInputStream("C:\\Users\\THINKPAD\\Desktop\\finalaa\\public\\uploads\\files\\" + user.getFile())));
     }
 
 }

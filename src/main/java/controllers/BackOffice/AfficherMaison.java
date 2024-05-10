@@ -45,7 +45,8 @@ public class AfficherMaison implements Initializable {
 
     @FXML
     private HBox collectBtn4;
-
+    @FXML
+    private Button utilisateurs;
     @FXML
     private HBox collectBtn5;
 

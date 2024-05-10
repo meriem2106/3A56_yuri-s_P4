@@ -122,5 +122,15 @@ public class ShowReservationM {
             throw new RuntimeException(e);
         }
     }
+    @FXML
+    private Button goback_butt;
+
+    @FXML
+    void GoBack(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FrontOffice/Home.fxml"));
+        Parent loginSuccessRoot = loader.load();
+        Scene scene = goback_butt.getScene();
+        scene.setRoot(loginSuccessRoot);
+    }
 
 }

@@ -1,5 +1,6 @@
 package controllers.FrontOffice;
 
+import controllers.Login;
 import entities.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import services.ServiceReservationH;
 import services.ServiceReservationM;
 
 import java.io.IOException;
@@ -49,9 +51,10 @@ public class AjouterReservationM implements Initializable {
 
     ServiceReservationM srm = new ServiceReservationM();
 
-    Utilisateur u = new Utilisateur(1,"abid","meriem","meriem@gmail.com","hehehe",new Date(100, 6, 11),"", Arrays.asList("proprietaire"),"","");
-
-
+//    Utilisateur u = new Utilisateur(1,"abid","meriem","meriem@gmail.com","hehehe",new Date(100, 6, 11),"", Arrays.asList("proprietaire"),"","");
+    ServiceReservationH srh = new ServiceReservationH();
+    services.UserService userService = new services.UserService();
+    User u = userService.rechercheUser(Login.id).get(0);
 
     ObservableList<String> repartitionList = FXCollections.
             observableArrayList("All Inclusive", "Pension complete", "Demi Pension", "Logement Petit Dejeuner","Logement Simple");

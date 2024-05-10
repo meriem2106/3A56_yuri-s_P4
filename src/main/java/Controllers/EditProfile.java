@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,8 +11,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import Entities.User;
-import Services.UserService;
+import entities.User;
+import services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -89,7 +89,7 @@ public class EditProfile {
             alert.setContentText("User Modifié !");
             alert.show();
 
-            Parent page1 = FXMLLoader.load(getClass().getResource("/Home.fxml"));
+            Parent page1 = FXMLLoader.load(getClass().getResource("/FrontOffice/Home.fxml"));
             Scene scene = new Scene(page1);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -119,7 +119,7 @@ public class EditProfile {
 
     @FXML
     void retour(ActionEvent event) throws IOException {
-        Parent page1 = FXMLLoader.load(getClass().getResource("/Home.fxml"));
+        Parent page1 = FXMLLoader.load(getClass().getResource("/FrontOffice/Home.fxml"));
         Scene scene = new Scene(page1);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -131,7 +131,7 @@ public class EditProfile {
         UserService userService = new UserService();
         User user = userService.rechercheUser(id).get(0);
 
-        String imagePath = "C:\\final\\public\\uploads\\files\\" + user.getFile();
+        String imagePath = "C:\\Users\\THINKPAD\\Desktop\\finalaa\\public\\uploads\\files\\" + user.getFile();
 
         nom_user.setText(user.getNom());
         prenom_user.setText(user.getPrenom());

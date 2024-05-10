@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -113,5 +114,15 @@ public class ModifierHotel {
         id_image.setText(hotel.getImage());
 
         oldHotel = hotel;
+    }
+    @FXML
+    private Button goback_butt;
+
+    @FXML
+    void GoBack(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FrontOffice/Home.fxml"));
+        Parent loginSuccessRoot = loader.load();
+        Scene scene = goback_butt.getScene();
+        scene.setRoot(loginSuccessRoot);
     }
 }

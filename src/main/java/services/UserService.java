@@ -1,6 +1,6 @@
-package Services;
+package services;
 
-import Entities.User;
+import entities.User;
 import utils.DataSource;
 import com.google.gson.Gson;
 

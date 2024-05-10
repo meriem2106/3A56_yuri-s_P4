@@ -46,7 +46,8 @@ public class AfficherReservationM implements Initializable  {
 
     @FXML
     private HBox collectBtn;
-
+    @FXML
+    private Button utilisateurs;
     @FXML
     private HBox collectBtn1;
 

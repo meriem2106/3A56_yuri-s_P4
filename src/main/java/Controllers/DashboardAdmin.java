@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -12,8 +12,13 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
-import Entities.User;
-import Services.UserService;
+import controllers.BackOffice.AfficherHotel;
+import controllers.BackOffice.AfficherMaison;
+import controllers.BackOffice.AfficherReservationH;
+import controllers.BackOffice.AfficherReservationM;
+import entities.Hotel;
+import entities.User;
+import services.UserService;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,12 +41,6 @@ import javafx.stage.Stage;
 public class DashboardAdmin {
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
     private Circle circle;
 
     @FXML
@@ -61,12 +60,6 @@ public class DashboardAdmin {
 
     @FXML
     private HBox collectBtn5;
-
-    @FXML
-    private Label collectText;
-
-    @FXML
-    private Label collectText1;
 
     @FXML
     private Label collectText2;
@@ -102,13 +95,13 @@ public class DashboardAdmin {
     private HBox fundrisingBtn;
 
     @FXML
-    private Label fundrisingText;
+    private Button hotels;
 
     @FXML
-    private GridPane gridPane;
+    private ListView<Hotel> listHotel;
 
     @FXML
-    private TextField search_tf;
+    private Button maisons;
 
     @FXML
     private HBox navBarLogout;
@@ -120,7 +113,10 @@ public class DashboardAdmin {
     private HBox productsBtn;
 
     @FXML
-    private Label productsText;
+    private Button reservationsH;
+
+    @FXML
+    private Button reservationsM;
 
     @FXML
     private Button show;
@@ -133,6 +129,34 @@ public class DashboardAdmin {
 
     @FXML
     private Label usersText;
+    @FXML
+    private Button utilisateurs;
+    @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+
+
+    @FXML
+    private Label collectText;
+
+    @FXML
+    private Label collectText1;
+
+
+
+    @FXML
+    private Label fundrisingText;
+
+    @FXML
+    private GridPane gridPane;
+
+    @FXML
+    private TextField search_tf;
+
+
 
     @FXML
     private ChoiceBox<String> tri_choice;
@@ -146,6 +170,36 @@ public class DashboardAdmin {
     void delete(ActionEvent event) {
     }
 
+    @FXML
+    void utilisateurs(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/DashboardAdmin.fxml"));
+            Parent root = loader.load();
+
+
+            DashboardAdmin controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     @FXML
     void stats(ActionEvent event) {
         try {
@@ -196,7 +250,7 @@ public class DashboardAdmin {
             }
         });
 
-        navFullname.setText(Login.user.getNom());
+
 
         search_tf.textProperty().addListener((observable, oldValue, newValue) -> {
             filterUsers(newValue);
@@ -307,6 +361,130 @@ public class DashboardAdmin {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    void hotels(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/BackOffice/AfficherHotel.fxml"));
+            Parent root = loader.load();
+
+
+            AfficherHotel controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void maisons(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/BackOffice/AfficherMaison.fxml"));
+            Parent root = loader.load();
+
+
+            AfficherMaison controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void reservationsH(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/BackOffice/AfficherReservationH.fxml"));
+            Parent root = loader.load();
+
+
+            AfficherReservationH controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void reservationsM(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/BackOffice/AfficherReservationM.fxml"));
+            Parent root = loader.load();
+
+
+            AfficherReservationM controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

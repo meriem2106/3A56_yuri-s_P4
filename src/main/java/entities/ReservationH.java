@@ -13,7 +13,7 @@ public class ReservationH {
 
     private Hotel hotel;
 
-    private Utilisateur utilisateur;
+    private User utilisateur;
 
     public ReservationH() {
     }
@@ -27,7 +27,7 @@ public class ReservationH {
         this.nbAdultes = nbAdultes;
     }
 
-    public ReservationH(int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart, Hotel hotel, Utilisateur utilisateur) {
+    public ReservationH(int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart, Hotel hotel, User utilisateur) {
         this.nbAdultes = nbAdultes;
         this.nbEnfants = nbEnfants;
         this.arrangement = arrangement;
@@ -38,7 +38,7 @@ public class ReservationH {
         this.utilisateur = utilisateur;
     }
 
-    public ReservationH(int id, int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart, Hotel hotel, Utilisateur utilisateur) {
+    public ReservationH(int id, int nbAdultes, int nbEnfants, String arrangement, String repartition, LocalDate dateArrivee, LocalDate dateDepart, Hotel hotel, User utilisateur) {
         this.id = id;
         this.nbAdultes = nbAdultes;
         this.nbEnfants = nbEnfants;
@@ -124,11 +124,11 @@ public class ReservationH {
         this.hotel = hotel;
     }
 
-    public Utilisateur getUtilisateur() {
+    public User getUtilisateur() {
         return utilisateur;
     }
 
-    public void setUtilisateur(Utilisateur utilisateur) {
+    public void setUtilisateur(User utilisateur) {
         this.utilisateur = utilisateur;
     }
 

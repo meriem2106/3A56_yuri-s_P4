@@ -26,6 +26,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import services.ServiceHotel;
 import javafx.geometry.Insets;
+import tn.esprit.controllers.FrontUserController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -405,7 +406,39 @@ public class AfficherHotel implements Initializable {
             e.printStackTrace();
         }
     }
+    @FXML
+    private Button reclamations;
 
+    @FXML
+    void reclamations(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FrontUser.fxml"));
+            Parent root = loader.load();
+
+
+            FrontUserController controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 

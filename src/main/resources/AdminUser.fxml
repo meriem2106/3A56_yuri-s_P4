@@ -167,6 +167,11 @@
                                           <Font name="Roboto Regular" size="16.0" />
                                        </font>
                                     </Button>
+                                    <Button fx:id="goback_butt" layoutX="611.0" layoutY="627.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="51.0" prefWidth="103.0" text="Go Back">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </HBox>
                               <Label prefHeight="18.0" prefWidth="103.0" text="Email : " GridPane.rowIndex="5" />
@@ -245,6 +250,7 @@
                               <Font size="14.0" />
                            </font>
                         </Button>
+
                         <ImageView fitHeight="38.0" fitWidth="32.0" layoutX="1018.0" layoutY="597.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@assets/icons8-pdf-64.png" />

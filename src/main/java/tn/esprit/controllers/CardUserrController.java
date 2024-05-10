@@ -3,12 +3,15 @@ package tn.esprit.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -52,8 +55,16 @@ public class CardUserrController {
         carddesc.setText(reclamation.getDescription());
 
 
-        Card.setBackground(Background.fill(Color.web(colors[(int)(Math.random()* colors.length)])));
-        Card.setStyle("-fx-border-radius: 5px;-fx-border-color:#808080");
+        Color[] colors = {Color.RED, Color.BLUE, Color.GREEN}; // Example colors array
+
+        Color randomColor = colors[(int)(Math.random() * colors.length)]; // Get a random color from the array
+
+        BackgroundFill backgroundFill = new BackgroundFill(randomColor, CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(backgroundFill);
+
+        Card.setBackground(background);
+        Card.setStyle("-fx-border-radius: 5px; -fx-border-color: #808080;");
+
 
         uprenom = reclamation.getPrenom();
         uid = reclamation.getId();

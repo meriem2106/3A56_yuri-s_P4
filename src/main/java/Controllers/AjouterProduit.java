@@ -61,8 +61,8 @@ public class AjouterProduit {
     private final ProduitCrud pc;
     private final FormationCrud fc;
 
-    public static final String ACCOUNT_SID = "AC0f818c18814338cc09dbf3c64fa9471e";
-    public static final String AUTH_TOKEN = "3036143fab402c0cf20cac97825661ae";
+    public static final String ACCOUNT_SID = "";
+    public static final String AUTH_TOKEN = "";
 
     public void sendSMS(String to, String body) {
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);

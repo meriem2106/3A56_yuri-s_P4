@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="488.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FrontOffice.AjouterEvenement">
+   <children>
+      <ImageView fitHeight="999.0" fitWidth="719.0" opacity="0.47" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/2f420fd4b34f8f335a512affbf417354.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="485.0" layoutX="2.0" layoutY="2.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="10.0" width="696.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.11999999731779099" green="0.5746666789054871" blue="1.0" opacity="0.39694657921791077" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.029999999329447746" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Text fill="#54493c" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter votre événement ">
+         <font>
+            <Font name="Calibri Bold Italic" size="29.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <TextField fx:id="nomTF" layoutX="65.0" layoutY="133.0" prefHeight="25.0" prefWidth="241.0" promptText="Quel est nom de votre événement ?" />
+      <Text layoutX="11.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contexte">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="11.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lieu">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="11.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Catégorie">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="10.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="11.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nbre de place">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="350.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="350.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transport">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="349.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="350.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date fin">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="350.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date début">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <TextField fx:id="decTF" layoutX="420.0" layoutY="273.0" prefHeight="25.0" prefWidth="249.0" promptText="que vouez vous dire encore?" />
+      <TextField fx:id="nbTF" layoutX="94.0" layoutY="413.0" prefHeight="25.0" prefWidth="152.0" promptText="Quelle est votre capacité?" />
+      <ComboBox fx:id="conComboBox" layoutX="65.0" layoutY="203.0" prefHeight="25.0" prefWidth="241.0" promptText="Choisir le contexte de votre événement " />
+      <ComboBox fx:id="lieuComboBox" layoutX="65.0" layoutY="343.0" prefHeight="25.0" prefWidth="249.0" promptText="Choisir le lieu de votre événement " />
+      <ComboBox fx:id="catComboBox" layoutX="65.0" layoutY="273.0" prefHeight="25.0" prefWidth="241.0" promptText="Choisir la catégorie de votre événement " />
+      <DatePicker fx:id="debutDatePicker" layoutX="412.0" layoutY="133.0" prefHeight="25.0" prefWidth="152.0" promptText="ça commence le..?" />
+      <DatePicker fx:id="finDatePicker" layoutX="412.0" layoutY="203.0" prefHeight="25.0" prefWidth="152.0" promptText="ça termine le..? " />
+      <TextField fx:id="imgTF" layoutX="420.0" layoutY="413.0" onAction="#saveImageToFolder" prefHeight="25.0" prefWidth="184.0" promptText="Entrer le chemin de votre image" />
+      <Button fx:id="ajouter" layoutX="184.0" layoutY="487.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter Evenement" textFill="#34a83c">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="imgFx" layoutX="623.0" layoutY="413.0" mnemonicParsing="false" onAction="#chargerImage" text="Parcourir" />
+      <ComboBox fx:id="tranComboBox" layoutX="413.0" layoutY="343.0" prefHeight="25.0" prefWidth="249.0" promptText="Comment peut-on y aller?" />
+      <Button fx:id="acceder" layoutX="431.0" layoutY="487.0" mnemonicParsing="false" onAction="#acceder" text="Accéder à la liste ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

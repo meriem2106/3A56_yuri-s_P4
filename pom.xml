@@ -100,11 +100,17 @@
             <version>4.0.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.xmlbeans</groupId>
-            <artifactId>xmlbeans</artifactId>
-            <version>5.1.1</version> <!-- Assurez-vous d'utiliser la dernière version compatible -->
-        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans -->
+        <!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans -->
+        <!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans -->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.xmlbeans</groupId>-->
+<!--            <artifactId>xmlbeans</artifactId>-->
+<!--            <version>5.0.2</version>-->
+<!--        </dependency>-->
+
+
+
 
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -156,12 +162,34 @@
             <version>8.10.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.itextpdf/itext7-core -->
+        <!-- https://mvnrepository.com/artifact/com.itextpdf/itext7-core -->
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itext7-core</artifactId>
-            <version>7.2.0</version>
-            <version>8.21.0</version> <!-- Replace 8.21.0 with the version you want to use -->
+            <version>7.1.16</version>
+            <type>pom</type>
         </dependency>
+
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>layout</artifactId>
+            <version>7.1.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>kernel</artifactId>
+            <version>7.1.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>barcodes</artifactId>
+            <version>8.0.2</version>
+        </dependency>
+
+
 
         <dependency>
             <groupId>com.google.api-client</groupId>
@@ -185,8 +213,9 @@
             <artifactId>javafx-swing</artifactId>
             <version>17</version>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>org.openjfx</groupId>
             <artifactId>javafx-web</artifactId>
             <version>16</version>
         </dependency>

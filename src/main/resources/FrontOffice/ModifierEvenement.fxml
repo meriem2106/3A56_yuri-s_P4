@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BackOffice.ModifierEvenement">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="656.0" opacity="0.56" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../java/images/ac918872567ba57d49ee45af44536f18.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="#a82a2a" layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier votre événement">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <VBox layoutX="264.0" layoutY="29.0" prefHeight="371.0" prefWidth="336.0">
+         <children>
+            <HBox prefHeight="36.0" prefWidth="336.0">
+               <children>
+                  <Label text="Nom">
+                     <HBox.margin>
+                        <Insets right="150.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nomup">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="20.0" prefHeight="36.0" prefWidth="336.0">
+               <children>
+                  <Label text="Contexte">
+                     <HBox.margin>
+                        <Insets right="125.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="conup">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="56.0" prefHeight="36.0" prefWidth="336.0">
+               <children>
+                  <Label text="Catégorie">
+                     <HBox.margin>
+                        <Insets right="125.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="catup">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="92.0" prefHeight="36.0" prefWidth="336.0">
+               <children>
+                  <Label text="Date de début">
+                     <HBox.margin>
+                        <Insets right="100.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="debup" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="128.0" prefHeight="36.0" prefWidth="336.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="74.0" text="Date de fin">
+                     <HBox.margin>
+                        <Insets right="125.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="finup" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="164.0" prefHeight="36.0" prefWidth="336.0">
+               <children>
+                  <Label text="Lieu">
+                     <HBox.margin>
+                        <Insets right="155.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="lieuup">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="200.0" prefHeight="36.0" prefWidth="336.0">
+               <children>
+                  <Label text="Transport">
+                     <HBox.margin>
+                        <Insets right="125.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tranup">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="236.0" prefHeight="36.0" prefWidth="336.0">
+               <children>
+                  <Label text="Description">
+                     <HBox.margin>
+                        <Insets right="125.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="decup">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="272.0" prefHeight="36.0" prefWidth="336.0">
+               <children>
+                  <Label text="Nombre de places ">
+                     <HBox.margin>
+                        <Insets right="125.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="up" prefHeight="17.0" prefWidth="40.0">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </TextField>
+               </children>
+            </HBox>
+            <Button fx:id="modifier" mnemonicParsing="false" onAction="#modifier" text="Modifier" textFill="#c98714">
+               <VBox.margin>
+                  <Insets left="130.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Button fx:id="retour" layoutX="39.0" layoutY="349.0" mnemonicParsing="false" onAction="#retour" text="Retour à la liste">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imgup" fitHeight="150.0" fitWidth="200.0" layoutX="26.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

@@ -1,7 +1,7 @@
 package Controllers;
 
 import Entities.User;
-import Services.UserService;
+import services.UserService;
 import utils.DataSource;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;

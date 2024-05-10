@@ -1,0 +1,32 @@
+/* Styles pour le premier élément de la liste */
+#grid .list-cell:first-child .label {
+    -fx-font-size: 18px; /* Taille de police plus petite */
+    -fx-font-weight: normal; /* Retour à la pondération de la police normale */
+    -fx-text-fill: #555; /* Couleur de texte différente */
+}
+
+/* Styles pour le deuxième élément de la liste */
+#grid .list-cell:nth-child(2) .label {
+    -fx-font-size: 20px; /* Taille de police différente */
+    -fx-font-weight: bold; /* Police en gras */
+    -fx-text-fill: #777; /* Couleur de texte différente */
+}
+
+/* Styles pour le troisième élément de la liste */
+#grid .list-cell:nth-child(3) .label {
+    -fx-font-size: 22px; /* Taille de police différente */
+    -fx-font-weight: normal; /* Retour à la pondération de la police normale */
+    -fx-text-fill: #999; /* Couleur de texte différente */
+}
+
+/* Styles pour les autres éléments de la liste */
+#grid .list-cell .label {
+    -fx-font-size: 24px; /* Taille de police par défaut */
+    -fx-font-weight: bold; /* Police en gras */
+    -fx-text-fill: #333; /* Couleur de texte par défaut */
+}
+
+/* Styles pour les éléments de la liste au survol */
+#grid .list-cell:hover .label {
+    -fx-text-fill: #555; /* Changement de couleur de texte au survol */
+}

@@ -1,0 +1,51 @@
+/* General Styles */
+body {
+    -fx-background-color: #f5f5f5; /* Light gray background */
+    -fx-font-family: sans-serif;
+}
+
+.label {
+    -fx-text-fill: #333; /* Dark gray text color */
+    -fx-font-size: 14px;
+}
+
+.text-field {
+    -fx-background-color: #fff; /* White background for text fields */
+    -fx-border-color: #ccc; /* Light gray border */
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-padding: 5px; /* Padding for better readability */
+}
+
+/* Title Section */
+.title {
+    -fx-text-fill: #4CAF50; /* Green title color */
+    -fx-font-size: 18px;
+    -fx-font-weight: bold; /* Bold title */
+}
+
+/* Separator */
+.separator {
+    -fx-background-color: #ddd; /* Light gray separator */
+    -fx-opacity: 0.5; /* Semi-transparent separator */
+}
+
+/* Button Styles */
+.button {
+    -fx-background-color: #4CAF50; /* Green button color */
+    -fx-text-fill: white; /* White text for buttons */
+    -fx-font-weight: bold; /* Bold button text */
+    -fx-cursor: hand; /* Hand cursor on hover */
+    -fx-border: none; /* Remove button borders */
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-padding: 10px 20px; /* Padding for buttons */
+}
+
+.button:hover {
+    -fx-background-color: #3e8e41; /* Darker green on hover */
+}
+
+/* GridPane Styling (Optional) */
+.grid-pane {
+    -fx-grid-lines-visible: true; /* Display grid lines faintly */
+    -fx-grid-lines-showing: false; /* Hide grid lines on hover */
+}

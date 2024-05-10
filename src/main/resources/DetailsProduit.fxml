@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane prefHeight="507.0" prefWidth="600.0" style="-fx-background-color: CE8889;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DetailsProduit">
+   <children>
+      <Pane layoutX="83.0" layoutY="87.0" prefHeight="395.0" prefWidth="465.0" style="-fx-border-style: dzafa;">
+         <children>
+            <Label fx:id="Vdesc" layoutX="145.0" layoutY="32.0" text="description" />
+            <Label fx:id="Vcat" layoutX="149.0" layoutY="81.0" text="categ" />
+            <Label fx:id="Vorig" layoutX="146.0" layoutY="57.0" text="origine" />
+            <Label fx:id="Vmatie" layoutX="144.0" layoutY="108.0" text="matiere" />
+            <Label fx:id="SujetF" layoutX="137.0" layoutY="142.0" onMouseClicked="#detailsForma" text="Formation" />
+            <Label layoutX="46.0" layoutY="32.0" text="Description :" />
+            <Label layoutX="56.0" layoutY="57.0" text="Origine :" />
+            <Label layoutX="49.0" layoutY="81.0" text="Categorie :" />
+            <Label layoutX="56.0" layoutY="108.0" text="Matiere :" />
+            <Label layoutX="48.0" layoutY="142.0" text="Formation :" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="165.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="IVimage" fitHeight="150.0" fitWidth="200.0" layoutX="112.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true" />
+            <Rating fx:id="prating" layoutX="256.0" layoutY="101.0" onMouseClicked="#produitRating" rating="1.0" />
+         </children>
+      </Pane>
+      <Label fx:id="Vnom" layoutX="279.0" layoutY="41.0" text="nom" textFill="#2a2f0b" textOverrun="CLIP">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_retour" layoutX="24.0" layoutY="26.0" mnemonicParsing="false" onAction="#retourner" style="-fx-background-color: BE7071; -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.3) , 3,0,0,1 );">
+         <graphic>
+            <ImageView fitHeight="34.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@en-arriere.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+  
+   </children>
+</AnchorPane>

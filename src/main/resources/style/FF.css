@@ -1,0 +1,29 @@
+/* Style du conteneur principal */
+.anchor-pane {
+    -fx-background-color: #f5f5f5; /* Couleur de fond */
+    -fx-padding: 20px; /* Espacement intérieur */
+}
+
+/* Style des étiquettes */
+.label {
+    -fx-font-size: 16px; /* Taille de la police */
+    -fx-text-fill: #333; /* Couleur du texte */
+}
+
+/* Style des séparateurs */
+.separator {
+    -fx-background-color: #ccc; /* Couleur de fond */
+}
+
+/* Style du bouton */
+.button {
+    -fx-background-color: #007bff; /* Couleur de fond */
+    -fx-text-fill: #fff; /* Couleur du texte */
+    -fx-padding: 10px 20px; /* Espacement intérieur */
+    -fx-font-size: 16px; /* Taille de la police */
+    -fx-border-radius: 5px; /* Bord arrondi */
+}
+
+.button:hover {
+    -fx-background-color: #0056b3; /* Couleur de fond au survol */
+}

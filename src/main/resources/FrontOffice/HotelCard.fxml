@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="257.0" prefWidth="261.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FrontOffice.HotelCard">
+<VBox alignment="CENTER" prefHeight="257.0" prefWidth="261.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FrontOffice.HotelCard">
    <children>
       <AnchorPane prefHeight="271.0" prefWidth="398.0" />
       <VBox prefHeight="229.0" prefWidth="203.0">

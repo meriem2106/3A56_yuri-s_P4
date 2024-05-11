@@ -2,13 +2,11 @@ package controllers.BackOffice;
 
 import controllers.DashboardAdmin;
 import entities.Hotel;
-import entities.Maison;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.input.MouseEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;

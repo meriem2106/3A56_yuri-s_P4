@@ -1,7 +1,5 @@
 package controllers.BackOffice;
 
-import controllers.FrontOffice.ShowReservationH;
-import entities.Maison;
 import entities.ReservationH;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,7 +24,6 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AfficherReservationH implements Initializable {

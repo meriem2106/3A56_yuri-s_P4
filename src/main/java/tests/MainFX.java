@@ -8,19 +8,26 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MainFX extends Application {
+public class MainFx extends Application {
 
     public static void main(String[] args) {
+        System.setProperty("imagesPaths","File:///C:\\Users\\Amine\\tzzt\\public\\public\\uploads\\images\\HImage");
+        System.setProperty("imagePathforCopy","C:\\Users\\Amine\\tzzt\\public\\public\\uploads\\images\\HImage");
         launch(args);
     }
 
-    @Override
     public void start(Stage primaryStage) throws IOException {
+<<<<<<< Updated upstream
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
+=======
+>>>>>>> Stashed changes
 
-        Parent root= loader.load();
-        primaryStage.setScene(new Scene (root,1280,720));
-        primaryStage.setTitle("test");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Gestion Hebergement");
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
+
 }

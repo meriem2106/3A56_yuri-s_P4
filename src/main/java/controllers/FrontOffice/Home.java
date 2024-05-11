@@ -1,5 +1,7 @@
 package controllers.FrontOffice;
 
+import Controllers.AjouterHebergement;
+import Controllers.AjouterInvitation;
 import controllers.BackOffice.AfficherReservationM;
 import controllers.Login;
 import entities.Hotel;
@@ -82,7 +84,7 @@ public class Home  {
             Parent root = loader.load();
 
 
-            AjouterHotel controller = loader.getController();
+            controllers.FrontOffice.AjouterHotel controller = loader.getController();
 
 
 
@@ -112,7 +114,7 @@ public class Home  {
             Parent root = loader.load();
 
 
-            AjouterMaison controller = loader.getController();
+            controllers.FrontOffice.AjouterMaison controller = loader.getController();
 
 
 
@@ -145,6 +147,44 @@ public class Home  {
         nom_user.setText(user.getNom());
         image_user.setImage(new Image(new FileInputStream("C:\\Users\\THINKPAD\\Desktop\\finalaa\\public\\uploads\\files\\" + user.getFile())));
 
+<<<<<<< Updated upstream
+=======
+        // Check if the user list is not empty before accessing its elements
+        List<User> userList = userService.rechercheUser(Login.id);
+        if (!userList.isEmpty()) {
+            entities.User user = userList.get(0);
+            System.out.println(Login.id);
+            nom_user.setText(user.getNom());
+            try {
+                // Load hotels
+                for (Hotel hotel : sh.afficher()) {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FrontOffice/HotelCard.fxml"));
+                    VBox cardBox = fxmlLoader.load();
+                    controllers.FrontOffice.HotelCard cardController = fxmlLoader.getController();
+                    cardController.setData(hotel);
+                    cardHotel.getChildren().add(cardBox);
+                }
+                // Load houses
+                for (Maison maison : sm.afficher()) {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FrontOffice/MaisonCard.fxml"));
+                    VBox cardBoxM = fxmlLoader.load();
+                    controllers.FrontOffice.MaisonCard cardController = fxmlLoader.getController();
+                    cardController.setData(maison);
+                    cardMaison.getChildren().add(cardBoxM);
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            // Handle the case where the user list is empty, perhaps by logging an error or displaying a message to the user.
+            System.out.println("User list is empty.");
+        }
+    }
+    @FXML
+    void reclamation(ActionEvent event) {
+>>>>>>> Stashed changes
         try {
             for (Hotel hotel : sh.afficher()) {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FrontOffice/HotelCard.fxml"));
@@ -166,6 +206,69 @@ public class Home  {
             throw new RuntimeException(e);
         }
     }
+    @FXML
+    void invitation(ActionEvent event) {
+        try {
+
+<<<<<<< Updated upstream
+
+=======
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterInvitation.fxml"));
+            Parent root = loader.load();
 
 
+            AjouterInvitation controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void hebergement(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterHebergement.fxml"));
+            Parent root = loader.load();
+
+
+            AjouterHebergement controller = loader.getController();
+
+
+
+            // Check if the loading was successful
+            if (root != null) {
+                // Create a new scene with the loaded view
+                Scene scene = new Scene(root);
+
+                // Get the main stage from the event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Set the new scene on the stage
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.err.println("Error: Loading ShowHotelB.fxml failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+>>>>>>> Stashed changes
 }

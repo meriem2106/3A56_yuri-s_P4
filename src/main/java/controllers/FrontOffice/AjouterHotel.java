@@ -1,6 +1,5 @@
 package controllers.FrontOffice;
 
-import controllers.BackOffice.AfficherReservationH;
 import entities.Hotel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -177,6 +176,16 @@ public class AjouterHotel implements Initializable {
         } catch (IOException e) {
             System.err.println("Error saving image: " + e.getMessage());
         }
+    }
+    @FXML
+    private Button goback_butt;
+
+    @FXML
+    void GoBack(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FrontOffice/Home.fxml"));
+        Parent loginSuccessRoot = loader.load();
+        Scene scene = goback_butt.getScene();
+        scene.setRoot(loginSuccessRoot);
     }
 }
 

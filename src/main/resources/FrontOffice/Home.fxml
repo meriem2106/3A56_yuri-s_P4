@@ -71,39 +71,68 @@
                   </HBox>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="42.0">
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="140.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
                <children>
-                  <Label styleClass="nav-links" text="Nos Produits" textFill="WHITE" />
+                  <Label styleClass="nav-links" textFill="WHITE" />
+                  <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" text="Produit">
+                     <font>
+                        <Font name="Castellar" size="17.0" />
+                     </font>
+                  </Button>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="151.0">
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="140.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
                <children>
-                  <Label styleClass="nav-links" text="Nos Evenements" textFill="WHITE" />
+                  <Label styleClass="nav-links" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#invitation" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" text="Invitation">
+                     <font>
+                        <Font name="Castellar" size="17.0" />
+                     </font>
+                  </Button>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="170.0">
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="143.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
                <children>
-                  <Label prefHeight="25.0" prefWidth="96.0" styleClass="nav-links" text="Nos Hebergements" textFill="WHITE" />
+                  <Label prefHeight="25.0" prefWidth="0.0" styleClass="nav-links" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#hebergement" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" text="Hebergement">
+                     <font>
+                        <Font name="Castellar" size="17.0" />
+                     </font>
+                  </Button>
                </children>
             </HBox>
+<<<<<<< Updated upstream
             <HBox alignment="CENTER" prefHeight="62.0" prefWidth="129.0">
+=======
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="146.0">
+>>>>>>> Stashed changes
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
                <children>
+<<<<<<< Updated upstream
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="97.0" styleClass="nav-links" text="Reclamations" textFill="WHITE" />
+=======
+                  <Button mnemonicParsing="false" onAction="#reclamation" prefHeight="37.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 25; -fx-background-radius: 25;" text="Reclamation">
+                     <font>
+                        <Font name="Castellar" size="17.0" />
+                     </font>
+                  </Button>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="0.0" styleClass="nav-links" textFill="WHITE" />
+
+>>>>>>> Stashed changes
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="69.0">
+            <HBox alignment="CENTER" prefHeight="81.0" prefWidth="77.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
@@ -115,7 +144,7 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="228.0">
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="190.0">
                <opaqueInsets>
                   <Insets right="15.0" />
                </opaqueInsets>
@@ -132,7 +161,7 @@
                   </Button>
                </children>
             </HBox>
-            <ImageView fx:id="image_user" fitHeight="55.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="image_user" fitHeight="42.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <ScrollPane layoutX="31.0" layoutY="133.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="254.0" prefWidth="1229.0" styleClass="dash__container-card">

@@ -54,9 +54,10 @@ public class Home {
     @FXML
     void initialize() throws FileNotFoundException {
         UserService userService = new UserService();
-        User user = userService.rechercheUser(Login.id).get(0);
+        User user = userService.rechercheUser(controllers.Login.id).get(0);
         nom_user.setText(user.getNom());
         image_user.setImage(new Image(new FileInputStream("C:\\Users\\THINKPAD\\Desktop\\finalaa\\public\\uploads\\files\\" + user.getFile())));
     }
+
 
 }
